@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FelonyDiscrimination.org - Login</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<div id="site-info">
+				<div id="site-logo" aria-label="FelonyDiscrimination.org logo"><a href="/"></a></div>
+				<div id="site-title"><h1><a href="/">FelonyDiscrimination.org</a></h1></div>
+			</div>
+			<nav id="main-menu">
+				<div class="main-menu-button" id="main-menu-hamburger" aria-label="Main menu">
+					<a href="#" class="main-menu-link"></a>
+					<span class="tooltiptext">Main Menu</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-home" aria-label="Main menu home">
+					<a href="index.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Home</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-search" aria-label="Main menu search">
+					<a href="search.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Search</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-share"  aria-label="Main menu share">
+					<a href="share.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Share</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-login"  aria-label="Main menu login">
+					<a href="login.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Login</span>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section id="login-form-container">
+				<form id="login-form" name="login-form" aria-label="Login form">
+					<fieldset>
+						<legend><h2>Login or <a href="signup.html">Signup</a></h2></legend>
+						<div class="login-form-input-container">
+							<label>Email: </label>
+							<input class="login-form-element" name="login-form-email" id="login-form-email" type="text" required aria-labelledby="Login form email" placeholder="Email"/>
+						</div>
+						<div class="login-form-input-container">
+							<label>Password: </label>
+							<input class="login-form-element" name="login-form-password" id="login-form-password" type="password" required aria-labelledby="Login form password" placeholder="Password"/>
+						</div>
+						<div class="login-form-input-container">
+							<input id="login-form-submit" type="submit" required aria-label="Login form submit" value="Submit"/>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+			<section id="forgotten-login-info-form-container">
+				<form id="forgotten-login-info-form" name="forgotten-login-info-form" aria-label="Forgotten login info form">
+					<fieldset>
+						<div class="forgotten-login-info-form-input-container">
+							<label>Forgot your login info?</label>
+							<input class="forgotten-login-info-form-element" name="forgotten-login-info-form-submit" id="forgotten-login-info-form-submit" type="submit" aria-labelledby="Login form forgotten info?" value="Click here"/>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
+</html>

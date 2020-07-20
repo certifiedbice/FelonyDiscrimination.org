@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FelonyDiscrimination.org - Recognize</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<div id="site-info">
+				<div id="site-logo" aria-label="FelonyDiscrimination.org logo"><a href="/"></a></div>
+				<div id="site-title"><h1><a href="/">FelonyDiscrimination.org</a></h1></div>
+			</div>
+			<nav id="main-menu">
+				<div class="main-menu-button" id="main-menu-hamburger" aria-label="Main menu">
+					<a href="#" class="main-menu-link"></a>
+					<span class="tooltiptext">Main Menu</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-home" aria-label="Main menu home">
+					<a href="index.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Home</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-search" aria-label="Main menu search">
+					<a href="search.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Search</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-share"  aria-label="Main menu share">
+					<a href="share.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Share</span>
+				</div>
+				<div class="main-menu-button" id="main-menu-login"  aria-label="Main menu login">
+					<a href="login.html" class="main-menu-link"></a>
+					<span class="tooltiptext">Login</span>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section id="recognize-an-organization-form-container">
+				<form id="recognize-an-organization-form" name="recognize-an-organization-form" aria-label="Recognize an organization form">
+					<fieldset>
+						<legend><h2>Recognize an organization</h2></legend>
+						<div class="recognize-an-organization-form-input-container">
+							<label>Organization name:</label>
+							<input class="recognize-an-organization-form-element" name="recognize-an-organization-form-organization-name" id="recognize-an-organization-form-organization-name" type="text" required aria-labelledby="Recognize an organization form organization name" placeholder="Name"/>
+						</div>
+						<div class="recognize-an-organization-form-input-container">
+							<label>Organization phone:</label>
+							<input class="recognize-an-organization-form-element" name="recognize-an-organization-form-organization-phone" id="recognize-an-organization-form-organization-phone" type="tel" aria-labelledby="Recognize an organization form organization phone" placeholder="Organization phone number"/>
+						</div>
+						<div class="recognize-an-organization-form-input-container">
+							<label>Organization street address:</label>
+							<input 
+								class="recognize-an-organization-form-element" 
+								name="recognize-an-organization-form-organization-street-address" 
+								id="recognize-an-organization-form-organization-street-address" 
+								type="text" 
+								required 
+								aria-labelledby="recognize-an-organization-form organization street address" 
+								placeholder="Street address"
+							/>
+						</div>
+						<div class="recognize-an-organization-form-input-container">
+							<label>Organization State:</label>
+							<select class="recognize-an-organization-form-element" name="recognize-an-organization-form-organization-state" id="recognize-an-organization-form-organization-state" required>
+								<option value="AL">AL</option>
+								<option value="AK">AK</option>
+								<option value="AZ">AZ</option>
+								<option value="AR">AR</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="IA">IA</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="ME">ME</option>
+								<option value="MD">MD</option>
+								<option value="MA">MA</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MS">MS</option>
+								<option value="MO">MO</option>
+								<option value="MT">MT</option>
+								<option value="NE">NE</option>
+								<option value="NV">NV</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NY">NY</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VT">VT</option>
+								<option value="VA">VA</option>
+								<option value="WA">WA</option>
+								<option value="WV">WV</option>
+								<option value="WI">WI</option>
+								<option value="WY">WY</option>
+							</select>
+						</div>
+						<div class="recognize-an-organization-form-input-container">	
+							<label>Organization Zip code:</label>
+							<input class="recognize-an-organization-form-element" name="recognize-an-organization-form-organization-zip-code" id="recognize-an-organization-form-organization-zip-code" type="text" required aria-labelledby="Recognize an organization form organization zip code" placeholder="Zip code"/>
+						</div>
+						<div class="recognize-an-organization-form-input-container">
+							<label>Message: </label>
+							<textarea class="recognize-an-organization-form-element" name="recognize-an-organization-form-message" id="recognize-an-organization-form-message" rows="6" cols="30" required aria-labelledby="Recognize an organization form form message">Enter your message here.</textarea> 
+						</div>
+						<div class="recognize-an-organization-form-input-container">
+							<input id="recognize-an-organization-form-submit" type="submit" required aria-label="Recognize an organization form form submit" value="Submit"/>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
+</html>

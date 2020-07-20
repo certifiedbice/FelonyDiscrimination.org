@@ -31,4 +31,4 @@ yarn-error.log*
 /.vscode
 
 #UI Build Files
-/ui-build-files
+/ui-build-files/graphic-files
