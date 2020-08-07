@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="organization-comments-container"
+>
+  <div
+    className="comment-list-container"
+  />
+  <div
+    className="organization-comment-form-container"
+  >
+    <form
+      aria-label="Comment form"
+      id="comment-form"
+      name="comment-form"
+      onSubmit={[Function]}
+    >
+      <legend>
+        Submit a Comment
+      </legend>
+      <div
+        className="comment-form-element-container"
+      >
+        <label>
+          Message:
+        </label>
+        <textarea
+          aria-labelledby="review-form-message"
+          className="comment-form-element"
+          cols="30"
+          id="comment-form-message"
+          name="comment"
+          required={true}
+          rows="6"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;

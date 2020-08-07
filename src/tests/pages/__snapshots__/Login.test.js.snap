@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  id="login-form-container"
+>
+  <form
+    aria-label="Login form"
+    id="login-form"
+    name="login-form"
+  >
+    <fieldset>
+      <legend>
+        <h2>
+          Login or 
+          <a
+            href="/signup"
+            onClick={[Function]}
+          >
+            Sign Up
+          </a>
+        </h2>
+      </legend>
+      <div
+        className="login-form-element-container"
+      >
+        <label>
+          Email: 
+        </label>
+        <input
+          aria-labelledby="Login form email"
+          className="login-form-element"
+          id="login-form-email"
+          name="login-form-email"
+          placeholder="Email"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="login-form-element-container"
+      >
+        <label>
+          Password: 
+        </label>
+        <input
+          aria-labelledby="Login form password"
+          className="login-form-element"
+          id="login-form-password"
+          name="login-form-password"
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="login-form-error-container"
+      />
+      <div
+        className="login-form-element-container"
+      >
+        <input
+          aria-label="Login form submit"
+          id="login-form-submit"
+          required={true}
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </fieldset>
+  </form>
+  <h3>
+    <a
+      href="/forgottenlogininfo"
+      id="forgotten-login-info-link"
+      onClick={[Function]}
+    >
+      Forgotten your Login info?
+    </a>
+  </h3>
+</section>
+`;

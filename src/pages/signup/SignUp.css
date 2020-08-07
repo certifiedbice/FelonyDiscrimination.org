@@ -1,0 +1,93 @@
+#signup-form-container {
+    flex: 1;
+    text-align: center;
+}
+
+#signup-form {}
+
+#signup-form legend {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#signup-form legend a {
+    color: #4378bc;
+}
+
+#signup-form legend a:hover {
+    color: #e6e7e8;
+}
+
+.signup-form-element-container {
+    padding: 5px;   
+}
+
+.signup-form-element-container label {
+    display: block;
+    margin: 0 0 5px 20px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.signup-form-element {
+    width: 90%;
+    background-color: #323232;
+    border: 1px solid #e6e7e8;
+    font-size: 12px;
+    color: #e6e7e8;
+}
+
+.signup-form-element-container input {
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.signup-form-element-container select {
+    width: 95%;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+#signup-form-submit {
+    width: 90%;
+    background-color: #4378bc;
+    border: 1px solid #e6e7e8;
+    font-size: 12px;
+    color: #e6e7e8;
+    cursor: pointer;
+}
+
+#signup-form-submit:hover {
+    width: 90%;
+    background-color: #323232;
+    border: 1px solid #e6e7e8;
+    font-size: 12px;
+    color: #e6e7e8;
+}
+
+#forgotten-signup-info-link:hover {
+    color: #e6e7e8;
+}
+
+/* Desktop CSS */
+@media(min-width:991px){
+    
+    .signup-form-element-container label {
+        margin: 0 0 10px 60px;
+    }
+    
+    .signup-form-element-container select {
+        width: 91%;
+    }
+
+    #signup-form-submit {
+        width: 25%;
+    }
+
+    #signup-form-submit:hover {
+        width: 25%;
+    }
+
+}

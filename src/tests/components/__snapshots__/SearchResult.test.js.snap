@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="search-result-item"
+>
+  <div>
+    <h2>
+      <a
+        href="/orgs/5"
+        id="5"
+        onClick={[Function]}
+      >
+        brownstone realty ltd
+      </a>
+    </h2>
+  </div>
+  <div>
+    3038328155
+  </div>
+  <div>
+    789 sherman st
+  </div>
+  <div>
+    denver
+    , 
+    co
+     
+    80203
+  </div>
+</div>
+`;

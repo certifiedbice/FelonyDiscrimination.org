@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header>
+  <div
+    id="site-info"
+  >
+    <div
+      aria-label="FelonyDiscrimination.org logo"
+      id="site-info-logo"
+    >
+      <a
+        className="site-info-link"
+        href="/"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      id="site-info-title"
+    >
+      <a
+        className="site-info-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <h1>
+          FelonyDiscrimination.org
+        </h1>
+      </a>
+    </div>
+  </div>
+  <nav
+    id="main-menu"
+  >
+    <div
+      aria-label="Main menu home"
+      className="main-menu-button"
+      id="main-menu-home"
+    >
+      <a
+        aria-current="page"
+        className="main-menu-link is-active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Home
+      </span>
+    </div>
+    <div
+      aria-label="Main menu about"
+      className="main-menu-button"
+      id="main-menu-about"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/about"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        About
+      </span>
+    </div>
+    <div
+      aria-label="Main menu search"
+      className="main-menu-button"
+      id="main-menu-search"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/search"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Search
+      </span>
+    </div>
+    <div
+      aria-label="Main menu submit"
+      className="main-menu-button"
+      id="main-menu-submit"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/submitorg"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Submit an Organization
+      </span>
+    </div>
+    <div
+      aria-label="Main menu resources"
+      className="main-menu-button"
+      id="main-menu-resources"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/resources"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Resources
+      </span>
+    </div>
+    <div
+      aria-label="Main menu share"
+      className="main-menu-button"
+      id="main-menu-share"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/share"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Share
+      </span>
+    </div>
+    <div
+      aria-label="Main menu login"
+      className="main-menu-button"
+      id="main-menu-login"
+    >
+      <a
+        aria-current={null}
+        className="main-menu-link"
+        href="/login"
+        onClick={[Function]}
+      />
+      <span
+        className="tooltiptext"
+      >
+        Login
+      </span>
+    </div>
+  </nav>
+</header>
+`;

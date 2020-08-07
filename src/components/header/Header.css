@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 5px 0;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Desktop CSS */
+@media(min-width:991px){
+
+    Header{
+        height: 150px;
+    }
+    
+}

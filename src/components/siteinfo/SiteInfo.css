@@ -1,0 +1,71 @@
+#site-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px 0 0 0;
+}
+
+#site-info-logo {
+    margin-left:-38px;
+    flex: 1;
+    background-image: url(../../images/site-logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+#site-info-title {
+    flex: 2;
+    margin-top: 5px;
+    margin-left: -53px;
+}
+
+#site-info-title h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.site-info-link {
+    text-decoration: none;
+    color: #e6e7e8;
+}
+
+#site-info-title a:hover {
+    color: #4378bc;
+}
+
+#site-info-title a:active {
+    color: #4378bc;
+}
+
+/* Not working for some reason, causes hover to not change */
+/* #site-info-title a:visited {color: #e6e7e8;} */
+
+/* Desktop CSS */
+@media(min-width:991px){
+    
+    #site-info {
+        width: 50%;
+        margin: 10px auto 0 auto;
+    }
+    
+    #site-info-title {
+        margin-top: 3px;
+        margin-left: -20px;
+    }
+
+    #site-info-logo {
+        margin-left:-40px;
+    }
+
+    #site-info-title {
+        margin: 30px 0 0 -60px;
+    }
+
+    #site-info-title h1 {
+        font-size: 35px;
+    }
+
+}

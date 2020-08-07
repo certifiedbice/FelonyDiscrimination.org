@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  id="contact-form-container"
+>
+  <form
+    aria-label="Contact form"
+    id="contact-form"
+    name="contact-form"
+  >
+    <fieldset>
+      <legend>
+        <h2>
+          Contact Us
+        </h2>
+      </legend>
+      <div
+        className="contact-form-element-container"
+      >
+        <label>
+          Name: 
+        </label>
+        <input
+          aria-labelledby="Contact form name"
+          className="contact-form-element"
+          id="contact-form-name"
+          name="contact-form-name"
+          placeholder="Name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="contact-form-element-container"
+      >
+        <label>
+          Phone: 
+        </label>
+        <input
+          aria-labelledby="Contact form phone"
+          className="contact-form-element"
+          id="contact-form-phone"
+          name="contact-form-phone"
+          placeholder="Phone number"
+          type="tel"
+        />
+      </div>
+      <div
+        className="contact-form-element-container"
+      >
+        <label>
+          Email: 
+        </label>
+        <input
+          aria-labelledby="Contact form email"
+          className="contact-form-element"
+          id="contact-form-email"
+          name="contact-form-email"
+          placeholder="your@email.com"
+          required={true}
+          type="email"
+        />
+      </div>
+      <div
+        className="contact-form-element-container"
+      >
+        <label>
+          Message: 
+        </label>
+        <textarea
+          aria-labelledby="Contact form message"
+          className="contact-form-element"
+          cols="30"
+          id="contact-form-message"
+          name="contact-form-message"
+          required={true}
+          rows="6"
+        />
+      </div>
+      <div
+        className="contact-form-element-container"
+      >
+        <input
+          aria-label="Contact form submit"
+          id="contact-form-submit"
+          required={true}
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </fieldset>
+  </form>
+</section>
+`;

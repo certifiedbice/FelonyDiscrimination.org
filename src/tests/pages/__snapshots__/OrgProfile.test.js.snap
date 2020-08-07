@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  id="organization-profile"
+>
+  <div />
+  <div />
+  <div />
+  <div>
+    , 
+     
+  </div>
+  <div
+    id="organization-endorsement-form-container"
+  >
+    <form
+      aria-label="Endorsement form"
+      id="endorsement-form"
+      name="endorsement-form"
+      onSubmit={[Function]}
+    >
+      <legend>
+        Submit an Endorsement
+      </legend>
+      <div
+        className="endorsement-form-element-container"
+      >
+        <label>
+          Endorse:
+        </label>
+        <select
+          className="endorsement-form-element"
+          id="endorsement-form-select"
+          name="endorsement"
+          required={true}
+        >
+          <option
+            value="positive"
+          >
+            Positive
+          </option>
+          <option
+            value="negative"
+          >
+            Negative
+          </option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div
+    id="organization-comments-container"
+  >
+    <div
+      className="comment-list-container"
+    />
+    <div
+      className="organization-comment-form-container"
+    >
+      <form
+        aria-label="Comment form"
+        id="comment-form"
+        name="comment-form"
+        onSubmit={[Function]}
+      >
+        <legend>
+          Submit a Comment
+        </legend>
+        <div
+          className="comment-form-element-container"
+        >
+          <label>
+            Message:
+          </label>
+          <textarea
+            aria-labelledby="review-form-message"
+            className="comment-form-element"
+            cols="30"
+            id="comment-form-message"
+            name="comment"
+            required={true}
+            rows="6"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+`;

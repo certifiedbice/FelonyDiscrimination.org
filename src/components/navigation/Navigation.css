@@ -1,0 +1,102 @@
+#main-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 25px;
+    margin: 5px 10px 5px 10px;
+    background-color: #323232;
+    border: 1px solid #e6e7e8;
+    border-radius: 50px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.main-menu-button {
+    flex: 1;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main-menu-button:hover {
+    background-color: #4378bc;
+}
+
+.main-menu-button:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltiptext {
+    flex: 1;
+    visibility: hidden;
+    position: absolute;
+    margin-top: 7px;
+    margin-left: -20px;
+    width: auto;
+    background-color: #4378bc;
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    z-index: 1;
+}
+
+.main-menu-link {
+ display: block;
+ height:100%;
+ width:100%;
+}
+
+#main-menu-home {
+    background-image: url(../../images/home-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-about {
+    background-image: url(../../images/about-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-submit {
+    background-image: url(../../images/review-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-resources {
+    background-image: url(../../images/resources-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-search {
+    background-image: url(../../images/search-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-share {
+    background-image: url(../../images/share-icon.png);
+    border-right: 1px solid #e6e7e8;
+}
+
+#main-menu-login {
+    background-image: url(../../images/login-icon.png);
+}
+
+/* Desktop CSS */
+@media(min-width:991px){
+    
+    #main-menu {
+        margin-top: 10px;
+        height: 100%;
+    }
+
+    .tooltiptext {
+        margin-left: -20px;
+        font-size: 14px;
+        color: #e6e7e8;
+    }
+    
+}

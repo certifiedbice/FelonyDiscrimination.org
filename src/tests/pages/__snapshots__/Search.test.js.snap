@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <section
+    id="search-form-container"
+  >
+    <form
+      aria-label="Search form"
+      id="search-form"
+      name="search-form"
+      onSubmit={[Function]}
+    >
+      <fieldset>
+        <legend>
+          <h2>
+            Search
+          </h2>
+        </legend>
+        <div
+          className="search-form-element-container"
+        >
+          <label>
+            Suggested search criteria: Name, City, State, Zipcode.
+          </label>
+          <input
+            aria-labelledby="Search form email"
+            className="search-form-element"
+            id="search-form-input"
+            name="text"
+            placeholder="Search"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="search-form-error-container"
+        />
+        <div
+          className="search-form-element-container"
+        >
+          <input
+            aria-label="Search form submit"
+            id="search-form-submit"
+            required={true}
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </fieldset>
+    </form>
+  </section>,
+  <section
+    id="search-results"
+  />,
+]
+`;

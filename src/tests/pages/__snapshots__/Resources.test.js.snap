@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h2>
+    Resources Page
+  </h2>
+  <a
+    href="/needtoknow"
+    onClick={[Function]}
+  >
+    Need to Know
+  </a>
+</div>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="site-info"
+>
+  <div
+    aria-label="FelonyDiscrimination.org logo"
+    id="site-info-logo"
+  >
+    <a
+      className="site-info-link"
+      href="/"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    id="site-info-title"
+  >
+    <a
+      className="site-info-link"
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        FelonyDiscrimination.org
+      </h1>
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,21 @@
+body {
+    background-color: #262626;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e6e7e8;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+a {
+    color: #4378bc;
+}
