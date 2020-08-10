@@ -6,16 +6,11 @@ export default class SearchResult extends Component{
 	render(){
 		const currentOrg=this.props.result;
 		return(
-			<div className='search-result-item'>
-				<div>
-					<h2>
-						<Link id={currentOrg.id} to={`orgs/${currentOrg.id}`}>{currentOrg.org_name}</Link>
-					</h2>
+			<Link className='search-result-link' id={currentOrg.id} to={`orgs/${currentOrg.id}`}>
+				<div className='search-result-item'>
+					<div id='org-name'><h2>{currentOrg.org_name}</h2></div>
 				</div>
-				<div>{currentOrg.org_phone}</div>
-				<div>{currentOrg.org_st_addr}</div>
-				<div>{currentOrg.org_city}, {currentOrg.org_state} {currentOrg.org_zipcode}</div>
-			</div>
+			</Link>
 		);
 	}
 }

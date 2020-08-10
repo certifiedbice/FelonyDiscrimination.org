@@ -14,11 +14,11 @@ export default class SubmitOrgForm extends Component{
     }
     render(){
         return(
-            <section id="review-form-container">
-                    <form id="review-form" name="review-form" aria-label="Report discrimination form" onSubmit={this.handleSubmit}>
+            <section id="submit-form-container">
+                    <form id="submit-form" name="submit-form" aria-label="Report discrimination form" onSubmit={this.handleSubmit}>
                         <fieldset>
-                            <legend><h2>Review an Organization</h2></legend>
-                            <div id="review-form-instructions">
+                            <legend><h2>Submit an Organization</h2></legend>
+                            <div id="submit-form-instructions">
                                 <p>
                                     We invite you to submit organizations into the database, where they can then be reviewed as positive or negative for discrimination. 
                                 </p>
@@ -26,41 +26,41 @@ export default class SubmitOrgForm extends Component{
                                     We would like to thank you for taking the time to submit an entry, every entry is one step closer to a solution.
                                 </p>
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization name:</label>
-                                <input className="review-form-element" name="org_name" id="review-form-organization-name" type="text" required aria-labelledby="review-form-organization-name" placeholder="Name"/>
+                                <input className="submit-form-element" name="org_name" id="submit-form-organization-name" type="text" required aria-labelledby="submit-form-organization-name" placeholder="Name"/>
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization phone:</label>
-                                <input className="review-form-element" name="org_phone" id="review-form-organization-phone" type="tel" aria-labelledby="review-form-organization-phone" placeholder="Organization phone number"/>
+                                <input className="submit-form-element" name="org_phone" id="submit-form-organization-phone" type="tel" aria-labelledby="submit-form-organization-phone" placeholder="Organization phone number"/>
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization street address:</label>
                                 <input 
-                                    className="review-form-element" 
+                                    className="submit-form-element" 
                                     name="org_st_addr" 
-                                    id="review-form-organization-street-address" 
+                                    id="submit-form-organization-street-address" 
                                     type="text" 
                                     required 
-                                    aria-labelledby="review-form-organization-street-address" 
+                                    aria-labelledby="submit-form-organization-street-address" 
                                     placeholder="Street address"
                                 />
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization City:</label>
                                 <input 
-                                    className="review-form-element" 
+                                    className="submit-form-element" 
                                     name="org_city" 
-                                    id="review-form-organization-city" 
+                                    id="submit-form-organization-city" 
                                     type="text" 
                                     required 
-                                    aria-labelledby="review-form-organization-city" 
+                                    aria-labelledby="submit-form-organization-city" 
                                     placeholder="City"
                                 />
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization State:</label>
-                                <select className="review-form-element" name="org_state" id="review-form-organization-state" required>
+                                <select className="submit-form-element" name="org_state" id="submit-form-organization-state" required>
                                     <option value="AL">AL</option>
                                     <option value="AK">AK</option>
                                     <option value="AZ">AZ</option>
@@ -113,21 +113,21 @@ export default class SubmitOrgForm extends Component{
                                     <option value="WY">WY</option>
                                 </select>
                             </div>
-                            <div className="review-form-element-container">	
+                            <div className="submit-form-element-container">	
                                 <label>Organization Zip code:</label>
-                                <input className="review-form-element" name="org_zipcode" id="review-form-organization-zip-code" type="text" required aria-labelledby="review-form-organization-zip-code" placeholder="Zip code"/>
+                                <input className="submit-form-element" name="org_zipcode" id="submit-form-organization-zip-code" type="text" required aria-labelledby="submit-form-organization-zip-code" placeholder="Zip code"/>
                             </div>
-                            <div className="review-form-element-container">
+                            <div className="submit-form-element-container">
                                 <label>Organization Type:</label>
-                                <select className="review-form-element" name="org_type" id="review-form-organization-type" required>
+                                <select className="submit-form-element" name="org_type" id="submit-form-organization-type" required>
                                     <option value="Employment" disabled>Employment</option>
                                     <option value="Housing">Housing</option>
                                 </select>
                             </div>
-                            <div className="review-form-error-container">
+                            <div className="submit-form-error-container">
                             </div>
-                            <div className="review-form-element-container">
-                                <input id="review-form-submit" type="submit" required aria-label="Review form submit" value="Submit"/>
+                            <div className="submit-form-element-container">
+                                <input id="submit-form-submit" type="submit" required aria-label="submit form submit" value="Submit"/>
                             </div>
                         </fieldset>
                     </form>

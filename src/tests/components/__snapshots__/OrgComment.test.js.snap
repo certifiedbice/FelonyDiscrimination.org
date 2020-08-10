@@ -2,22 +2,19 @@
 
 exports[`renders correctly 1`] = `
 <div
-  id="organization-comments-container"
+  className="organization-comment-form-container"
 >
-  <div
-    className="comment-list-container"
-  />
-  <div
-    className="organization-comment-form-container"
+  <form
+    aria-label="Comment form"
+    id="comment-form"
+    name="comment-form"
+    onSubmit={[Function]}
   >
-    <form
-      aria-label="Comment form"
-      id="comment-form"
-      name="comment-form"
-      onSubmit={[Function]}
-    >
+    <fieldset>
       <legend>
-        Submit a Comment
+        <h3>
+          Submit a Comment
+        </h3>
       </legend>
       <div
         className="comment-form-element-container"
@@ -28,14 +25,28 @@ exports[`renders correctly 1`] = `
         <textarea
           aria-labelledby="review-form-message"
           className="comment-form-element"
-          cols="30"
+          cols="27"
           id="comment-form-message"
           name="comment"
           required={true}
           rows="6"
         />
       </div>
-    </form>
-  </div>
+      <div
+        className="comment-form-error-container"
+      />
+      <div
+        className="comment-form-element-container"
+      >
+        <input
+          aria-label="comment form submit"
+          id="comment-form-submit"
+          required={true}
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </fieldset>
+  </form>
 </div>
 `;

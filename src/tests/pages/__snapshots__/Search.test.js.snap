@@ -21,7 +21,12 @@ Array [
           className="search-form-element-container"
         >
           <label>
-            Suggested search criteria: Name, City, State, Zipcode.
+            <p>
+              Suggested search criteria:
+            </p>
+            <p>
+              Name, City, State, Zipcode.
+            </p>
           </label>
           <input
             aria-labelledby="Search form email"
@@ -52,6 +57,8 @@ Array [
   </section>,
   <section
     id="search-results"
-  />,
+  >
+    <div />
+  </section>,
 ]
 `;

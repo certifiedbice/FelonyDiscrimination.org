@@ -16,19 +16,20 @@ export default class OrgComments extends Component{
     }
     render(){
         return(
-            <div id='organization-comments-container'>
-                <div className="comment-list-container">
-
-                </div>
-                <div className="organization-comment-form-container">
-                    <form id="comment-form" name="comment-form" aria-label="Comment form" onSubmit={this.handleSubmit}>
-                        <legend>Submit a Comment</legend>
+            <div className="organization-comment-form-container">
+                <form id="comment-form" name="comment-form" aria-label="Comment form" onSubmit={this.handleSubmit}>
+                    <fieldset>
+                        <legend><h3>Submit a Comment</h3></legend>
                         <div className="comment-form-element-container">
                             <label>Message:</label>
-                            <textarea className="comment-form-element" name="comment" id="comment-form-message" rows="6" cols="30" required aria-labelledby="review-form-message"/>
+                            <textarea className="comment-form-element" name="comment" id="comment-form-message" rows="6" cols="27" required aria-labelledby="review-form-message"/>
                         </div>
-                    </form>
-                </div>
+                        <div className="comment-form-error-container"></div>
+                        <div className="comment-form-element-container">
+                            <input id="comment-form-submit" type="submit" required aria-label="comment form submit" value="Submit"/>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
         );
 	}

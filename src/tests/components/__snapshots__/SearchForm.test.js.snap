@@ -20,7 +20,12 @@ exports[`renders correctly 1`] = `
         className="search-form-element-container"
       >
         <label>
-          Suggested search criteria: Name, City, State, Zipcode.
+          <p>
+            Suggested search criteria:
+          </p>
+          <p>
+            Name, City, State, Zipcode.
+          </p>
         </label>
         <input
           aria-labelledby="Search form email"

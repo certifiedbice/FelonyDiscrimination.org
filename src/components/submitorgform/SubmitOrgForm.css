@@ -1,33 +1,33 @@
-#review-form-container {
+#submit-form-container {
     flex: 1;
     text-align: center;
 }
 
-#review-form {}
+#submit-form {}
 
-#review-form legend {
+#submit-form legend {
     width: 100%;
     margin-bottom: 5px;
     font-size: 18px;
     font-weight: 700;
 }
 
-#review-form-instructions {
+#submit-form-instructions {
     padding: 0 20px 20px 20px;
 }
 
-.review-form-element-container {
+.submit-form-element-container {
     padding: 5px;   
 }
 
-.review-form-element-container label {
+.submit-form-element-container label {
     display: block;
     margin: 0 0 5px 20px;
     text-align: left;
     font-size: 12px;
 }
 
-.review-form-element {
+.submit-form-element {
     width: 90%;
     background-color: #323232;
     border: 1px solid #e6e7e8;
@@ -35,23 +35,23 @@
     color: #e6e7e8;
 }
 
-.review-form-element-container input {
+.submit-form-element-container input {
     border-radius: 50px;
     padding: 5px;
 }
 
-.review-form-element-container select {
+.submit-form-element-container select {
     width: 95%;
     border-radius: 50px;
     padding: 5px;
 }
 
-.review-form-element-container textarea {
+.submit-form-element-container textarea {
     border-radius: 25px;
     padding: 10px;
 }
 
-#review-form-submit {
+#submit-form-submit {
     width: 90%;
     background-color: #4378bc;
     border: 1px solid #e6e7e8;
@@ -60,7 +60,7 @@
     cursor: pointer;
 }
 
-#review-form-submit:hover {
+#submit-form-submit:hover {
     width: 90%;
     background-color: #323232;
     border: 1px solid #e6e7e8;
@@ -71,23 +71,31 @@
 /* Desktop CSS */
 @media(min-width:991px){
     
-    #review-form-instructions {
+    #submit-form-instructions {
         padding: 0 60px 20px 60px;
     }
     
-    .review-form-element-container label {
-        margin: 0 0 10px 60px;
+    .submit-form-element-container label {
+        margin: 0 0 10px 10px;
     }
     
-    .review-form-element-container select {
-        width: 91%;
+    .submit-form-element {
+        width: 100%;
+        background-color: #323232;
+        border: 1px solid #e6e7e8;
+        font-size: 12px;
+        color: #e6e7e8;
+    }
+
+    .submit-form-element-container select {
+        width: 100.5%;
     }
     
-    #review-form-submit {
+    #submit-form-submit {
         width: 25%;
     }
 
-    #review-form-submit:hover {
+    #submit-form-submit:hover {
         width: 25%;
     }
 

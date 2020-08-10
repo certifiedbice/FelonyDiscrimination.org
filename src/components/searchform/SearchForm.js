@@ -21,7 +21,7 @@ export default class SearchForm extends Component{
                     <fieldset>
                         <legend><h2>Search</h2></legend>
                         <div className="search-form-element-container">
-                            <label>Suggested search criteria: Name, City, State, Zipcode.</label>
+                            <label><p>Suggested search criteria:</p><p>Name, City, State, Zipcode.</p></label>
                             <input className="search-form-element" name="text" id="search-form-input" type="text" required aria-labelledby="Search form email" placeholder="Search"/>
                         </div>
                         <div className="search-form-error-container"></div>

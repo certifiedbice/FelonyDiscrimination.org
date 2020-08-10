@@ -1,0 +1,91 @@
+#organization-profile {}
+
+#organization-profile div {}
+
+#org-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #e6e7e8;
+    border-radius: 25px;
+}
+
+.org-info {
+    flex: 1;
+    text-align: center;
+    color: #262626;
+}
+
+.org-info p {
+    font-size: 4vw;
+}
+
+#org-name h2 {
+    margin: 10px 0 0 0;
+    font-size: 5.5vw;
+    color:#4378bc
+}
+
+.org-info h3 {
+    margin: 0 0 0 0;
+    font-size: 4vw;
+    text-align: center;
+}
+
+#endorsements-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: auto;
+    min-height: 50px;
+    border: 1px solid #e6e7e8;
+    border-radius: 45px;
+    padding: 5px 15px 5px 15px;
+}
+
+.endorsements-info {
+    flex: 1;
+    margin: 0;
+    font-size: 5.5vw;
+}
+
+#pos-endorsement {
+    background-image: url(../../images/pos-endorsements.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 0 0 0;
+}
+
+#pos-endorsement-sum {
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+#neg-endorsement {
+    background-image: url(../../images/neg-endorsements.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 0 0 0;
+}
+
+#neg-endorsement-sum {
+    margin: 15px 0 0 0;;
+    text-align: center;
+}
+
+/* Desktop CSS */
+@media(min-width:991px){
+    
+    #pos-endorsement-sum {
+        margin: -10px 0 0 0;       
+    }
+
+    #neg-endorsement-sum {
+        margin: -10px 0 0 0;       
+    }
+
+}

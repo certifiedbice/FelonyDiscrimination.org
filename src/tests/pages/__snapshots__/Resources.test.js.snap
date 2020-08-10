@@ -3,13 +3,44 @@
 exports[`renders correctly 1`] = `
 <div>
   <h2>
-    Resources Page
+    Resources and Tools
   </h2>
-  <a
-    href="/needtoknow"
-    onClick={[Function]}
-  >
-    Need to Know
-  </a>
+  <h3>
+    Housing
+  </h3>
+  <p>
+    <a
+      href="https://docs.google.com/document/d/1rkd2xvzn58M0jcAt1xpd50I4_Rxmp__cGLqWEJvD3EE/edit?usp=sharing"
+      target="_blank"
+    >
+      Need to Know
+    </a>
+  </p>
+  <p>
+    <a
+      href="https://docs.google.com/document/d/1KsRsxBDgV2F4VWNweF9ShYY4JwBFh39QiRYS1b1JzfA/edit?usp=sharing"
+      target="_blank"
+    >
+      Check List
+    </a>
+  </p>
+  <p>
+    <a
+      href="https://docs.google.com/document/d/1vtEaTsTOyBwtyQbe8TloopnY65yJOxlAvUnp-X-r0ok/edit?usp=sharing"
+      target="_blank"
+    >
+      Additional Resources
+    </a>
+  </p>
+  <p>
+    If you would like to submit a resource, please 
+    <a
+      href="/contact"
+      onClick={[Function]}
+    >
+      contact us
+    </a>
+    .
+  </p>
 </div>
 `;

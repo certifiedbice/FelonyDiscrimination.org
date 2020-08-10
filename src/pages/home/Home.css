@@ -1,8 +1,15 @@
 main h2 {
     margin: 0 0 5px 0;
     font-weight: 700;
+    text-align: center;
+}
+main h3 {
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    text-align: center;
 }
 main p {
+    margin-bottom: 10px;
     font-size: 12px;
     font-weight: normal;
     line-height: normal;

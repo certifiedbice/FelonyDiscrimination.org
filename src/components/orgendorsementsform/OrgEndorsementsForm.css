@@ -1,37 +1,41 @@
-#organization-comment-form-container {
+#organization-endorsement-form-container {
     text-align: center;
 }
 
-#comment-form legend {
+#endorsement-form legend {
     width: 100%;
 }
 
-#comment-form legend h3 {
+#endorsement-form legend h3 {
     text-align: center;
 }
 
-.comment-form-element-container {
+.endorsement-form-element-container {
     margin: 0 0 10px 0;
-    text-align: center;
 }
 
-.comment-form-element-container label {
+.endorsement-form-element-container label {
     display: block;
     margin: 0 0 5px 20px;
     text-align: left;
     font-size: 12px;
 }
 
-.comment-form-element-container textarea {
-    width: 92%;
+.endorsement-form-element {
+    width: 90%;
     background-color: #323232;
     border: 1px solid #e6e7e8;
-    border-radius: 25px;
-    padding: 10px;
+    font-size: 12px;
     color: #e6e7e8;
 }
 
-#comment-form-submit {
+.endorsement-form-element-container select {
+    width: 95%;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+#endorsement-form-submit {
     width: 90%;
     background-color: #4378bc;
     border: 1px solid #e6e7e8;
@@ -42,7 +46,7 @@
     cursor: pointer;
 }
 
-#comment-form-submit:hover {
+#endorsement-form-submit:hover {
     width: 90%;
     background-color: #323232;
     border: 1px solid #e6e7e8;
@@ -53,16 +57,20 @@
 /* Desktop CSS */
 @media(min-width:991px){
     
-    .comment-form-element-container textarea {
-        width: 98%;
+   .endorsement-form-element-container label {
+        margin: 0 0 10px 10px;
     }
 
-    #comment-form-submit {
+    .endorsement-form-element-container select {
+        width: 100%;
+    }
+
+    #endorsement-form-submit {
         width: 25%;
     }
 
-    #comment-form-submit:hover {
+    #endorsement-form-submit:hover {
         width: 25%;
     }
-
- }
+    
+}

@@ -2,22 +2,22 @@
 
 exports[`renders correctly 1`] = `
 <section
-  id="review-form-container"
+  id="submit-form-container"
 >
   <form
     aria-label="Report discrimination form"
-    id="review-form"
-    name="review-form"
+    id="submit-form"
+    name="submit-form"
     onSubmit={[Function]}
   >
     <fieldset>
       <legend>
         <h2>
-          Review an Organization
+          Submit an Organization
         </h2>
       </legend>
       <div
-        id="review-form-instructions"
+        id="submit-form-instructions"
       >
         <p>
           We invite you to submit organizations into the database, where they can then be reviewed as positive or negative for discrimination.
@@ -27,15 +27,15 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization name:
         </label>
         <input
-          aria-labelledby="review-form-organization-name"
-          className="review-form-element"
-          id="review-form-organization-name"
+          aria-labelledby="submit-form-organization-name"
+          className="submit-form-element"
+          id="submit-form-organization-name"
           name="org_name"
           placeholder="Name"
           required={true}
@@ -43,30 +43,30 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization phone:
         </label>
         <input
-          aria-labelledby="review-form-organization-phone"
-          className="review-form-element"
-          id="review-form-organization-phone"
+          aria-labelledby="submit-form-organization-phone"
+          className="submit-form-element"
+          id="submit-form-organization-phone"
           name="org_phone"
           placeholder="Organization phone number"
           type="tel"
         />
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization street address:
         </label>
         <input
-          aria-labelledby="review-form-organization-street-address"
-          className="review-form-element"
-          id="review-form-organization-street-address"
+          aria-labelledby="submit-form-organization-street-address"
+          className="submit-form-element"
+          id="submit-form-organization-street-address"
           name="org_st_addr"
           placeholder="Street address"
           required={true}
@@ -74,15 +74,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization City:
         </label>
         <input
-          aria-labelledby="review-form-organization-city"
-          className="review-form-element"
-          id="review-form-organization-city"
+          aria-labelledby="submit-form-organization-city"
+          className="submit-form-element"
+          id="submit-form-organization-city"
           name="org_city"
           placeholder="City"
           required={true}
@@ -90,14 +90,14 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization State:
         </label>
         <select
-          className="review-form-element"
-          id="review-form-organization-state"
+          className="submit-form-element"
+          id="submit-form-organization-state"
           name="org_state"
           required={true}
         >
@@ -354,15 +354,15 @@ exports[`renders correctly 1`] = `
         </select>
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization Zip code:
         </label>
         <input
-          aria-labelledby="review-form-organization-zip-code"
-          className="review-form-element"
-          id="review-form-organization-zip-code"
+          aria-labelledby="submit-form-organization-zip-code"
+          className="submit-form-element"
+          id="submit-form-organization-zip-code"
           name="org_zipcode"
           placeholder="Zip code"
           required={true}
@@ -370,14 +370,14 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <label>
           Organization Type:
         </label>
         <select
-          className="review-form-element"
-          id="review-form-organization-type"
+          className="submit-form-element"
+          id="submit-form-organization-type"
           name="org_type"
           required={true}
         >
@@ -395,14 +395,14 @@ exports[`renders correctly 1`] = `
         </select>
       </div>
       <div
-        className="review-form-error-container"
+        className="submit-form-error-container"
       />
       <div
-        className="review-form-element-container"
+        className="submit-form-element-container"
       >
         <input
-          aria-label="Review form submit"
-          id="review-form-submit"
+          aria-label="submit form submit"
+          id="submit-form-submit"
           required={true}
           type="submit"
           value="Submit"
