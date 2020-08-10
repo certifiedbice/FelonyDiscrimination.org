@@ -1,4 +1,6 @@
-#FelonyDiscrimination.org
+# FelonyDiscrimination.org
+
+![FelonyDiscrimination.org Logo](http://felonydiscrimination.org/images/site-logo.png)
 
 ## Live Site:
 ### http://felonydiscrimination.org
@@ -24,15 +26,15 @@
 ## Fundraising:
 ### https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1
 
-##Problem:
+## Problem:
 
 Discrimination against persons with felony records is openly allowed by legislation. The result is unemployment, homelessness, higher ricidivism rates, and wasted tax money.
 
-##Solution:
+## Solution:
 
 This app is going to provide a valuable resource to those unprotected souls in the form of a searchable database that lists out “friendly” and “unfriendly” establishments in order to assist them in finding organizations that will house and employ them. Furthermore, this system will be used to collect the data needed to seek amendments to the current legislation.
 
-##Functionality:
+## Functionality:
 
 The app allows for submission of organizations into the database for the purposes of archiving friendly
 and unfriendly organizations. Further functionality allows users to mark an organization with either a
