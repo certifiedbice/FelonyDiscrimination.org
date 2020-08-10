@@ -12,7 +12,7 @@
 ## Trello Kanban:
 ### https://trello.com/b/jJdB3QEP/felonydiscriminationorg
 
-## GitMind Component Map:
+## GitMind React Component Map:
 ### https://gitmind.com/app/doc/725537041
 
 ## Gitmind HTML Wireframes:
