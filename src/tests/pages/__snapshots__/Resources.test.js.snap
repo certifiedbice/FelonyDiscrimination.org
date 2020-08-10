@@ -11,6 +11,7 @@ exports[`renders correctly 1`] = `
   <p>
     <a
       href="https://docs.google.com/document/d/1rkd2xvzn58M0jcAt1xpd50I4_Rxmp__cGLqWEJvD3EE/edit?usp=sharing"
+      rel="noopener noreferrer"
       target="_blank"
     >
       Need to Know
@@ -19,6 +20,7 @@ exports[`renders correctly 1`] = `
   <p>
     <a
       href="https://docs.google.com/document/d/1KsRsxBDgV2F4VWNweF9ShYY4JwBFh39QiRYS1b1JzfA/edit?usp=sharing"
+      rel="noopener noreferrer"
       target="_blank"
     >
       Check List
@@ -27,6 +29,7 @@ exports[`renders correctly 1`] = `
   <p>
     <a
       href="https://docs.google.com/document/d/1vtEaTsTOyBwtyQbe8TloopnY65yJOxlAvUnp-X-r0ok/edit?usp=sharing"
+      rel="noopener noreferrer"
       target="_blank"
     >
       Additional Resources

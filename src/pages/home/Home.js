@@ -25,7 +25,7 @@ export default function Home(){
 			<h3>Contribute</h3>
 			<p>
 				Currently we are seeking contributions to expand this project, you can Contribute
-				here: <a target='_blank' href='https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1'>Fundraising</a>.
+				here: <a target='_blank' rel='noopener noreferrer' href='https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1'>Fundraising</a>.
 			</p>
 			<p>
 				If you are interested in donating some of your skills and time to help further this 

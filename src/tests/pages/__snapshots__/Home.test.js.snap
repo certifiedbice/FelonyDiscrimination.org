@@ -31,6 +31,7 @@ exports[`renders correctly 1`] = `
     Currently we are seeking contributions to expand this project, you can Contribute here: 
     <a
       href="https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1"
+      rel="noopener noreferrer"
       target="_blank"
     >
       Fundraising

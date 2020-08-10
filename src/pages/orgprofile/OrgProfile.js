@@ -16,7 +16,7 @@ export default class OrgProfile extends Component{
     }
     updateEndorsements=endorsement=>{
         console.log(endorsement)
-        if(endorsement==1)this.setState({
+        if(parseInt(endorsement)===1)this.setState({
             org:{
                 id:this.state.org.id,
                 org_name:this.state.org.org_name,
