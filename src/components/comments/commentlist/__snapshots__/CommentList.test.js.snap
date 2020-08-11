@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="comment-list-container"
+>
+  <div />
+  <div
+    className="comment-item"
+  >
+    <div
+      id="comment-date_published"
+    >
+      undefined undefined NaN NaN
+    </div>
+    <div
+      id="comment-title"
+    >
+      <h3>
+        User says: 
+      </h3>
+    </div>
+    <div
+      id="comment-content"
+    />
+  </div>
+  <div
+    className="comment-item"
+  >
+    <div
+      id="comment-date_published"
+    >
+      undefined undefined NaN NaN
+    </div>
+    <div
+      id="comment-title"
+    >
+      <h3>
+        User says: 
+      </h3>
+    </div>
+    <div
+      id="comment-content"
+    />
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import SearchForm from '../../components/searchform/SearchForm';
-import SearchResultsList from '../../components/searchresultslist/SearchResultsList';
+import SearchForm from '../../components/search/searchform/SearchForm';
+import SearchResultsList from '../../components/search/searchresultslist/SearchResultsList';
 import './Search.css';
 
 export default class Search extends Component{

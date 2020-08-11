@@ -1,6 +1,6 @@
 # FelonyDiscrimination.org
 
-![FelonyDiscrimination.org Logo](http://felonydiscrimination.org/images/site-logo.png)
+![FelonyDiscrimination.org Logo](http://felonydiscrimination.org/static/media/site-logo.d1c35237.png)
 
 ## Live Site:
 ### http://felonydiscrimination.org

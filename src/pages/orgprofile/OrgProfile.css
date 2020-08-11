@@ -77,6 +77,16 @@
     text-align: center;
 }
 
+#comments-list-title {
+    width: 100%;
+    text-align: center;
+}
+
+#comments-list-title h3 {
+    width: 100%;
+    text-align: center;
+}
+
 /* Desktop CSS */
 @media(min-width:991px){
     

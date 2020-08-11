@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h2>
+    Share Us - Spread the Word!
+  </h2>
+  <p>
+    Check us out on 
+    <a
+      href="http://instagram.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Instagram
+    </a>
+    .
+  </p>
+  <p>
+    Check us out on 
+    <a
+      href="http://facebook.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      FaceBook
+    </a>
+    .
+  </p>
+  <p>
+    Check us out on 
+    <a
+      href="https://g.page/r/CX7VL3BGVw5eEBA"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Google
+    </a>
+    .
+  </p>
+  <p>
+    Support our fundraising efforts through 
+    <a
+      href="https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      GoFundMe
+    </a>
+    .
+  </p>
+</div>
+`;
