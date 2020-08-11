@@ -1,5 +1,7 @@
 #FelonyDiscrimination.org
 
+![FelonyDiscrimination.org Logo](http://felonydiscrimination.org/images/site-logo.png)
+
 ## Live Site:
 ### http://felonydiscrimination.org
 
@@ -71,4 +73,4 @@ This is the server used for the Linus application.
 
 ## Deployment
 
-This Server is deployed with Heroku at `https://blooming-reef-26525.herokuapp.com`.
+This Server is deployed with Heroku at `https://limitless-reef-44232.herokuapp.com/`.
