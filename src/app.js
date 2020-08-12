@@ -22,6 +22,6 @@ app.use('/api/orgs', orgsRouter);
 app.use('/api/orgs/:orgId/endorsements', endorsementsRouter)
 app.use('/api/orgs/:orgId/comments', commentsRouter)
 app.get('/',(req,res)=>{
-	res.send('Flip Florp!');
+	res.send('FelonyDiscrimination.org');
 });
 module.exports=app;

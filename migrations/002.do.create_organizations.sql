@@ -6,6 +6,6 @@ CREATE TABLE organizations (
   org_city text not null,
   org_state text not null,
   org_zipcode text not null,
-  pos_endorsements numeric not null,
-  neg_endorsements numeric not null
+  pos_endorsements numeric,
+  neg_endorsements numeric
 );
