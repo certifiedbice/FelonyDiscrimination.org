@@ -1,5 +1,5 @@
 {
-	"name": "felonydiscrimination.org",
+	"name": "felonydiscrimination.org-client",
 	"homepage": "http://felonydiscrimination.org",
 	"version": "0.1.0",
 	"private": true,
@@ -18,7 +18,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "env NODE_ENV=production react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
