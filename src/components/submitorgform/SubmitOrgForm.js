@@ -120,8 +120,8 @@ export default class SubmitOrgForm extends Component{
                             <div className="submit-form-element-container">
                                 <label>Organization Type:</label>
                                 <select className="submit-form-element" name="org_type" id="submit-form-organization-type" required>
-                                    <option value="Employment" disabled>Employment</option>
-                                    <option value="Housing">Housing</option>
+                                    <option value="employment" disabled>Employment</option>
+                                    <option value="housing">Housing</option>
                                 </select>
                             </div>
                             <div className="submit-form-error-container">
