@@ -1,28 +1,33 @@
 import React,{Component} from 'react';
 import TokenService from '../../services/token-service';
+import Context from '../../context/Context'
 
 export default class LoginForm extends Component{
-    static defaultProps={onLoginSuccess:()=>{}};
+    static contextType=Context;
+    //static defaultProps={onLoginSuccess:()=>{}};
 	state={error:null};
+
+	onLoginSuccess=()=>{}
 
 	handleSubmitBasicAuth=e=>{
 		e.preventDefault();
-		const {user_name,password}=e.target;
-		TokenService.saveAuthToken(TokenService.makeBasicAuthToken(user_name.value,password.value));
-		user_name.value='';
+		const {email,password}=e.target;
+		TokenService.saveAuthToken(TokenService.makeBasicAuthToken(email.value,password.value));
+		email.value='';
 		password.value='';
-		this.props.onLoginSuccess();
+		this.onLoginSuccess();
+		this.context.loginState(true);
 	}
 
 	render(){
-        const {error}=this.state;
+		const {error}=this.state;
         return(
             <form id="login-form" name="login-form" aria-label="Login form" onSubmit={this.handleSubmitBasicAuth}>
 	            <fieldset>
 					<legend><h2>Login</h2></legend>
 					<div className="login-form-element-container">
 						<label htmlFor='login-form-email'>Email: </label>
-						<input className="login-form-element" name="user_name" id="login-form-email" type="text" required aria-labelledby="Login form email" placeholder="Email"/>
+						<input className="login-form-element" name="email" id="login-form-email" type="text" required aria-labelledby="Login form email" placeholder="Email"/>
 					</div>
 					<div className="login-form-element-container">
 						<label htmlFor='login-form-password'>Password: </label>

@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
           aria-labelledby="Login form email"
           className="login-form-element"
           id="login-form-email"
-          name="user_name"
+          name="email"
           placeholder="Email"
           required={true}
           type="text"
@@ -67,6 +67,11 @@ exports[`renders correctly 1`] = `
       </div>
     </fieldset>
   </form>
+  <h3>
+    <p>
+      Test login info: email: jake.todd@email.com / password: somePass1
+    </p>
+  </h3>
   <h3>
     <p>
       <a

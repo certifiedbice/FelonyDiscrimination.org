@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
+import Context from '../context/Context';
 import PrivateRoute from '../components/utils/PrivateRoute';
 import PublicOnlyRoute from '../components/utils/PublicOnlyRoute';
 import Header from '../components/header/Header';
@@ -18,30 +19,44 @@ import ForgottenLoginInfo from '../pages/forgottenlogininfo/ForgottenLoginInfo';
 import UserProfile from '../pages/userprofile/UserProfile';
 import OrgProfile from '../pages/orgprofile/OrgProfile';
 import NotFound from '../pages/notfound/NotFound';
+import ErrorBoundary from '../components/errorboundary/ErrorBoundary';
 
-export default function AppRouter(){
-	return(
-		<BrowserRouter>
-			<Header />
-			<main>
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route exact path='/about' component={About} />
-					<Route exact path='/contact' component={Contact} />
-					<Route exact path='/faq' component={Faq} />
-					<Route exact path='/search' component={Search} />
-					<Route exact path='/submitorg' component={SubmitOrg} />
-					<Route exact path='/resources' component={Resources} />
-					<Route exact path='/needtoknow' component={NeedToKnow} />
-					<Route exact path='/share' component={Share} />
-					<PublicOnlyRoute exact path='/login' component={Login} />
-					<PublicOnlyRoute exact path='/signup' component={SignUp} />
-					<PublicOnlyRoute exact path='/forgottenlogininfo' component={ForgottenLoginInfo} />
-					<PrivateRoute exact path='/userprofile' component={UserProfile} />
-					<Route exact path='/orgs/:orgId' component={OrgProfile} />
-					<Route component={NotFound} />
-				</Switch>
-			</main>
-		</BrowserRouter>
-	);
+export default class AppRouter extends Component{
+	state={loggedIn:false,error:null};
+	
+	loginState=val=>{
+		this.setState({loggedIn:val});
+	}
+
+	render(){
+		const contextValue={
+			loginState:this.loginState
+		}
+		return(
+			<Context.Provider value={contextValue}>
+				<BrowserRouter>
+					<ErrorBoundary><Header/></ErrorBoundary>
+					<main>
+						<Switch>
+							<Route exact path='/' component={Home}/>
+							<Route exact path='/about' component={About}/>
+							<Route exact path='/contact' component={Contact}/>
+							<Route exact path='/faq' component={Faq}/>
+							<Route exact path='/search' component={Search}/>
+							<Route exact path='/submitorg' component={SubmitOrg}/>
+							<Route exact path='/resources' component={Resources}/>
+							<Route exact path='/needtoknow' component={NeedToKnow}/>
+							<Route exact path='/share' component={Share}/>
+							<PublicOnlyRoute exact path='/login' component={Login}/>
+							<PublicOnlyRoute exact path='/signup' component={SignUp}/>
+							<PublicOnlyRoute exact path='/forgottenlogininfo' component={ForgottenLoginInfo}/>
+							<PrivateRoute exact path='/userprofile' component={UserProfile}/>
+							<Route exact path='/orgs/:orgId' component={OrgProfile}/>
+							<Route component={NotFound}/>
+						</Switch>
+					</main>
+				</BrowserRouter>
+			</Context.Provider>
+		);
+	}
 }
