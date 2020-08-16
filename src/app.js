@@ -17,11 +17,9 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 //app.use('/api/users', usersRouter)
-app.use('/api/contact', contactRouter);
-app.use('/api/orgs', orgsRouter);
-app.use('/api/orgs/:orgId/endorsements', endorsementsRouter)
-app.use('/api/orgs/:orgId/comments', commentsRouter)
-app.get('/',(req,res)=>{
-	res.send('FelonyDiscrimination.org');
-});
+app.use('/api/contact',contactRouter);
+app.use('/api/orgs',orgsRouter);
+app.use('/api/orgs/:orgId/endorsements',endorsementsRouter)
+app.use('/api/orgs/:orgId/comments',commentsRouter)
+app.get('/',(req,res)=>{res.send('FelonyDiscrimination.org');});
 module.exports=app;

@@ -1,86 +1,3 @@
-function makeOrgsArray(){
-	return [
-		{
-			org_name:'Waterside Apartments',
-			org_phone:'9185997180',
-			org_st_addr:'1703 S Jackson Ave West',
-			org_city:'tulsa',
-			org_state:'OK',
-			org_zipcode:'74107',
-			pos_endorsements:'15',
-			neg_endorsements:'2',
-			org_type:'housing'
-		},
-		{
-			org_name:'The Giani Building', 
-			org_phone:'5045990987', 
-			org_st_addr:'600 Canal St', 
-			org_city:'New Orleans', 
-			org_state:'LA', 
-			org_zipcode:'70130', 
-			pos_endorsements:'3', 
-			neg_endorsements:'13', 
-			org_type:'housing'
-		},
-		{
-			org_name:'Broadleaf Apartments', 
-			org_phone:'9163915100', 
-			org_st_addr:'40 Park City Ct', 
-			org_city:'Sacramento', 
-			org_state:'CA', 
-			org_zipcode:'95831', 
-			pos_endorsements:'14', 
-			neg_endorsements:'56', 
-			org_type:'housing'
-		},
-		{
-			org_name:'Gateway West Loop', 
-			org_phone:'3129670513', 
-			org_st_addr:'11 S Green St', 
-			org_city:'Chicago', 
-			org_state:'IL', 
-			org_zipcode:'60607', 
-			pos_endorsements:'0', 
-			neg_endorsements:'69', 
-			org_type:'housing'
-		},
-		{
-			org_name:'Brownstone Realty LTD', 
-			org_phone:'3038328155', 
-			org_st_addr:'789 Sherman St', 
-			org_city:'Denver', 
-			org_state:'CO', 
-			org_zipcode:'80203', 
-			pos_endorsements:'1', 
-			neg_endorsements:'113', 
-			org_type:'housing'
-		}
-	];
-}
-
-function makeMaliciousOrg(){
-	const maliciousOrg={
-		org_name:'Naughty naughty very naughty <script>alert("xss");</script>',
-		org_phone:'9185997180',
-		org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
-		org_city:'tulsa',
-		org_state:'OK',
-		org_zipcode:'74107',
-		pos_endorsements:15,
-		pos_endorsements:2,
-		org_type:'housing'	  
-	}
-	const expectedOrg={
-	  ...maliciousOrg,
-	  org_name:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
-	  org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
-	}
-	return {
-	  maliciousOrg,
-	  expectedOrg,
-	}
-}
-
 function makeUsersArray(){
 	return [
 		{
@@ -146,49 +63,228 @@ function makeUsersArray(){
 	];
 }
 
-function makeCommentsArray(){
+function makeOrgsArray(){
+	return [
+		{
+			org_name:'Waterside Apartments',
+			org_phone:'9185997180',
+			org_st_addr:'1703 S Jackson Ave West',
+			org_city:'tulsa',
+			org_state:'OK',
+			org_zipcode:'74107',
+			pos_endorsements:'15',
+			neg_endorsements:'2',
+			org_type:'housing'
+		},
+		{
+			org_name:'The Giani Building', 
+			org_phone:'5045990987', 
+			org_st_addr:'600 Canal St', 
+			org_city:'New Orleans', 
+			org_state:'LA', 
+			org_zipcode:'70130', 
+			pos_endorsements:'3', 
+			neg_endorsements:'13', 
+			org_type:'housing'
+		},
+		{
+			org_name:'Broadleaf Apartments', 
+			org_phone:'9163915100', 
+			org_st_addr:'40 Park City Ct', 
+			org_city:'Sacramento', 
+			org_state:'CA', 
+			org_zipcode:'95831', 
+			pos_endorsements:'14', 
+			neg_endorsements:'56', 
+			org_type:'housing'
+		},
+		{
+			org_name:'Gateway West Loop', 
+			org_phone:'3129670513', 
+			org_st_addr:'11 S Green St', 
+			org_city:'Chicago', 
+			org_state:'IL', 
+			org_zipcode:'60607', 
+			pos_endorsements:'0', 
+			neg_endorsements:'69', 
+			org_type:'housing'
+		},
+		{
+			org_name:'Brownstone Realty LTD', 
+			org_phone:'3038328155', 
+			org_st_addr:'789 Sherman St', 
+			org_city:'Denver', 
+			org_state:'CO', 
+			org_zipcode:'80203', 
+			pos_endorsements:'1', 
+			neg_endorsements:'113', 
+			org_type:'housing'
+		}
+	];
+}
+
+function makeCommentsArray(users,orgs){
 	return [
 		{
 			id:1,
 			title:'Total waste of time!',
-			user_id:'1',
-			org_id:'1',
+			user_id:users[0].id,
+			org_id:orgs[0].id,
 			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			date_published:'2020-08-10 16:21:06'
+			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
 			id:2,
 			title:'Great Place',
-			user_id:'2',
-			org_id:'2',
+			user_id:users[1].id,
+			org_id:orgs[1].id,
 			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			date_published:'2020-08-10 16:21:06'
+			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
 			id:3,
 			title:'Terrible!',
-			user_id:'3',
-			org_id:'3',
+			user_id:users[2].id,
+			org_id:orgs[2].id,
 			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			date_published:'2020-08-10 16:21:06'
+			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
 			id:4,
 			title:'Unbelievable!',
-			user_id:'4',
-			org_id:'4',
+			user_id:users[3].id,
+			org_id:orgs[3].id,
 			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			date_published:'2020-08-10 16:21:06'
+			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
 			id:5,
 			title:'Highly recommend',
-			user_id:'5',
-			org_id:'5',
+			user_id:users[4].id,
+			org_id:orgs[4].id,
 			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			date_published:'2020-08-10 16:21:06'
+			date_published:new Date('2029-01-22T16:28:32.615Z')
 		}
 	];
+}
+
+function makeEndorsementsArray(users,orgs){
+	return [
+		{
+			id:1,
+			user_id:users[0].id,
+			org_id:orgs[0].id,
+			endorsement:0,
+			date_published:new Date('2029-01-22T16:28:32.615Z')
+		},
+		{
+			id:2,
+			user_id:users[1].id,
+			org_id:orgs[1].id,
+			endorsement:1,
+			date_published:new Date('2029-01-22T16:28:32.615Z')
+		},
+		{
+			id:3,
+			user_id:users[2].id,
+			org_id:orgs[2].id,
+			endorsement:0,
+			date_published:new Date('2029-01-22T16:28:32.615Z')
+		},
+		{
+			id:4,
+			user_id:users[3].id,
+			org_id:orgs[3].id,
+			endorsement:0,
+			date_published:new Date('2029-01-22T16:28:32.615Z')
+		},
+		{
+			id:5,
+			user_id:users[4].id,
+			org_id:orgs[4].id,
+			endorsement:1,
+			date_published:new Date('2029-01-22T16:28:32.615Z')
+		}
+	];
+}
+
+function makeExpectedOrg(org){
+	return{
+		org_name:org.org_name,
+		org_phone:org.org_phone,
+		org_st_addr:org.org_st_addr,
+		org_city:org.org_city,
+		org_state:org.org_state,
+		org_zipcode:org.org_zipcode,
+		pos_endorsements:org.pos_endorsements,
+		neg_endorsements:org.neg_endorsements,
+		org_type:org.org_type
+	}
+}
+
+function makeNewOrg(){
+	return{
+		org_name:'Test APT',
+		org_phone:'0000000000',
+		org_st_addr:'123 S Test Ave',
+		org_city:'tulsa',
+		org_state:'OK',
+		org_zipcode:'74107',
+		org_type:'housing'
+	}
+}
+
+function makeNewEndorsement(){
+	return{
+		org_id:'1',
+		endorsement:'true',
+	}
+}
+
+function makeExpectedArticleComments(users,articleId,comments){
+	const expectedComments = comments
+		.filter(comment => comment.article_id === articleId)
+
+	return expectedComments.map(comment => {
+		const commentUser = users.find(user => user.id === comment.user_id)
+		return {
+			id: comment.id,
+			text: comment.text,
+			date_created: comment.date_created.toISOString(),
+			user: {
+				id: commentUser.id,
+				user_name: commentUser.user_name,
+				full_name: commentUser.full_name,
+				nickname: commentUser.nickname,
+				date_created: commentUser.date_created.toISOString(),
+				date_modified: commentUser.date_modified || null,
+			}
+		}
+	})
+}
+
+function makeMaliciousOrg(){
+	const maliciousOrg={
+		id:911,
+		org_name:'Naughty naughty very naughty <script>alert("xss");</script>',
+		org_phone:'9185997180',
+		org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
+		org_city:'tulsa',
+		org_state:'OK',
+		org_zipcode:'74107',
+		pos_endorsements:15,
+		pos_endorsements:2,
+		org_type:'housing'	  
+	}
+	const expectedOrg={
+	  ...maliciousOrg,
+	  org_name:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
+	  org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
+	}
+	return {
+	  maliciousOrg,
+	  expectedOrg,
+	}
 }
 
 function makeMaliciousComment(){
@@ -211,67 +307,101 @@ function makeMaliciousComment(){
 	}
 }
 
-function makeEndorsementsArray(){
-	return [
-		{
-			id:1,
-			user_id:'1',
-			org_id:'1',
-			endorsement:'0',
-			date_published:'2020-08-09 17:15:05'
-		},
-		{
-			id:2,
-			user_id:'2',
-			org_id:'2',
-			endorsement:'1',
-			date_published:'2020-08-09 17:15:05'
-		},
-		{
-			id:3,
-			user_id:'3',
-			org_id:'3',
-			endorsement:'0',
-			date_published:'2020-08-09 17:15:05'
-		},
-		{
-			id:4,
-			user_id:'4',
-			org_id:'4',
-			endorsement:'0',
-			date_published:'2020-08-09 17:15:05'
-		},
-		{
-			id:5,
-			user_id:'5',
-			org_id:'5',
-			endorsement:'1',
-			date_published:'2020-08-09 17:15:05'
-		}
-	];
+function makeOrgsFixtures(){
+	const testUsers=makeUsersArray();
+	const testOrgs=makeOrgsArray();
+	const testComments=makeCommentsArray(testUsers,testOrgs);
+	return {testUsers,testOrgs,testComments};
+}
+
+function makeEndorsementsFixtures(){
+	const testUsers=makeUsersArray();
+	const testOrgs=makeOrgsArray();
+	const testEndorsements=makeEndorsementsArray(testUsers,testOrgs);
+	return {testUsers,testOrgs,testEndorsements};
 }
 
 function cleanTables(db){
     return db.transaction(trx=>
     	trx.raw(
         	`TRUNCATE
-         	organizations`
+				users,
+				organizations,
+				comments,
+				endorsements
+			`
       	)
       	.then(()=>
         	Promise.all([
-        		trx.raw(`ALTER SEQUENCE organizations_id_seq minvalue 0 START WITH 1`),
+				trx.raw(`ALTER SEQUENCE organizations_id_seq minvalue 0 START WITH 1`),
+				trx.raw(`ALTER SEQUENCE users_id_seq minvalue 0 START WITH 1`),
+				trx.raw(`ALTER SEQUENCE comments_id_seq minvalue 0 START WITH 1`),
+				trx.raw(`ALTER SEQUENCE endorsements_id_seq minvalue 0 START WITH 1`),
         		trx.raw(`SELECT setval('organizations_id_seq', 0)`),
+        		trx.raw(`SELECT setval('users_id_seq', 0)`),
+        		trx.raw(`SELECT setval('comments_id_seq', 0)`),
+        		trx.raw(`SELECT setval('endorsements_id_seq', 0)`),
         	])
       	)
     )
 }
 
+function seedOrgsTables(db,organizations){
+	// use a transaction to group the queries and auto rollback on any failure
+	return db.transaction(async trx=>{
+		await trx.into('organizations').insert(organizations);
+		// update the auto sequence to match the forced id values
+
+		// need to add id's into the make function before this can be uncommented,
+		// this also means altering code elsewhere.
+
+		// await Promise.all([
+		// 	trx.raw(
+		// 		`SELECT setval('organizations_id_seq', ?)`,
+		// 		[organizations[organizations.length-1].id],
+		// 	)
+		// ]);
+	});
+}
+
+function seedUsersTables(db,users){
+	// use a transaction to group the queries and auto rollback on any failure
+	return db.transaction(async trx=>{
+		await trx.into('users').insert(users);
+		// update the auto sequence to match the forced id values
+		await Promise.all([
+			trx.raw(
+				`SELECT setval('users_id_seq', ?)`,
+				[users[users.length-1].id],
+			)
+		]);
+	});
+}
+
+function seedMaliciousOrg(db,organization){
+	return db.into('organizations').insert([organization]);
+}
+
+function makeAuthHeader(user){
+	const token=Buffer.from(`${user.email}:${user.password}`).toString('base64');
+	return `Basic ${token}`;
+}
+
 module.exports={
-	makeOrgsArray,
-	makeMaliciousOrg,
 	makeUsersArray,
+	makeOrgsArray,
 	makeCommentsArray,
-	makeMaliciousComment,
 	makeEndorsementsArray,
-	cleanTables
+	makeExpectedOrg,
+	makeNewOrg,
+	makeNewEndorsement,
+	makeMaliciousOrg,
+	makeMaliciousComment,
+	makeOrgsFixtures,
+	makeEndorsementsFixtures,
+	cleanTables,
+	seedOrgsTables,
+	seedUsersTables,
+	seedMaliciousOrg,
+	makeAuthHeader
 }

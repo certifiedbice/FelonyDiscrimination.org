@@ -1,3 +1,4 @@
+const xss=require('xss');
 const EndorsementsService={
     insertEndorsement(knex,newEndorsement){
         return knex
@@ -6,11 +7,12 @@ const EndorsementsService={
         .returning('*')
         .then(rows=>{return rows[0];});
     },
-    // updateEndorsement(knex,id,newEndorsementFields){
-    //     return knex('endorsements')
-    //     .where({ id })
-    //     .update(newEndorsementFields);
-    // },
+    serializeEndorsement(endorsement){
+        return{
+            org_id:xss(endorsement.org_id),
+            endorsement:xss(endorsement.endorsement)
+        }
+    }
 };
 
 module.exports=EndorsementsService;

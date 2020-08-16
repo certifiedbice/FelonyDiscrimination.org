@@ -2,6 +2,7 @@ const path=require('path');
 const express=require('express');
 const xss=require('xss');
 const OrgsService=require('./orgs-service');
+const {requireAuth}=require('../middleware/basic-auth');
 const orgsRouter=express.Router();
 const jsonParser=express.json();
 
@@ -55,6 +56,7 @@ orgsRouter
 
 orgsRouter
 	.route('/submit-org')
+	.all(requireAuth)
 	.post(jsonParser,(req,res,next)=>{
 		const {org_name,org_phone,org_st_addr,org_city,org_state,org_zipcode,org_type}=req.body;
 		const newOrg={org_name,org_phone,org_st_addr,org_city,org_state,org_zipcode,org_type};
