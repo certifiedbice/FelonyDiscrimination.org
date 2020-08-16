@@ -383,12 +383,12 @@ exports[`renders correctly 1`] = `
         >
           <option
             disabled={true}
-            value="Employment"
+            value="employment"
           >
             Employment
           </option>
           <option
-            value="Housing"
+            value="housing"
           >
             Housing
           </option>

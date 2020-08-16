@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
-
+import PrivateRoute from '../components/utils/PrivateRoute';
+import PublicOnlyRoute from '../components/utils/PublicOnlyRoute';
 import Header from '../components/header/Header';
 import Home from '../pages/home/Home';
 import About from '../pages/about/About';
@@ -33,10 +34,10 @@ export default function AppRouter(){
 					<Route exact path='/resources' component={Resources} />
 					<Route exact path='/needtoknow' component={NeedToKnow} />
 					<Route exact path='/share' component={Share} />
-					<Route exact path='/login' component={Login} />
-					<Route exact path='/signup' component={SignUp} />
-					<Route exact path='/forgottenlogininfo' component={ForgottenLoginInfo} />
-					<Route exact path='/userprofile' component={UserProfile} />
+					<PublicOnlyRoute exact path='/login' component={Login} />
+					<PublicOnlyRoute exact path='/signup' component={SignUp} />
+					<PublicOnlyRoute exact path='/forgottenlogininfo' component={ForgottenLoginInfo} />
+					<PrivateRoute exact path='/userprofile' component={UserProfile} />
 					<Route exact path='/orgs/:orgId' component={OrgProfile} />
 					<Route component={NotFound} />
 				</Switch>

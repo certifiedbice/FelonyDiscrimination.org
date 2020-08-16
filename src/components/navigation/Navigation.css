@@ -85,6 +85,9 @@
     background-image: url(../../images/login-icon.png);
 }
 
+#main-menu-loggedIn {
+    background-image: url(../../images/logged-in-icon.png);
+}
 /* Desktop CSS */
 @media(min-width:991px){
     

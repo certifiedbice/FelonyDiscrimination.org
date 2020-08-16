@@ -8,30 +8,27 @@ exports[`renders correctly 1`] = `
     aria-label="Login form"
     id="login-form"
     name="login-form"
+    onSubmit={[Function]}
   >
     <fieldset>
       <legend>
         <h2>
-          Login or 
-          <a
-            href="/signup"
-            onClick={[Function]}
-          >
-            Sign Up
-          </a>
+          Login
         </h2>
       </legend>
       <div
         className="login-form-element-container"
       >
-        <label>
+        <label
+          htmlFor="login-form-email"
+        >
           Email: 
         </label>
         <input
           aria-labelledby="Login form email"
           className="login-form-element"
           id="login-form-email"
-          name="login-form-email"
+          name="user_name"
           placeholder="Email"
           required={true}
           type="text"
@@ -40,14 +37,16 @@ exports[`renders correctly 1`] = `
       <div
         className="login-form-element-container"
       >
-        <label>
+        <label
+          htmlFor="login-form-password"
+        >
           Password: 
         </label>
         <input
           aria-labelledby="Login form password"
           className="login-form-element"
           id="login-form-password"
-          name="login-form-password"
+          name="password"
           placeholder="Password"
           required={true}
           type="password"
@@ -62,7 +61,6 @@ exports[`renders correctly 1`] = `
         <input
           aria-label="Login form submit"
           id="login-form-submit"
-          required={true}
           type="submit"
           value="Submit"
         />
@@ -70,13 +68,25 @@ exports[`renders correctly 1`] = `
     </fieldset>
   </form>
   <h3>
-    <a
-      href="/forgottenlogininfo"
-      id="forgotten-login-info-link"
-      onClick={[Function]}
-    >
-      Forgotten your Login info?
-    </a>
+    <p>
+      <a
+        href="/signup"
+        onClick={[Function]}
+      >
+        Sign Up
+      </a>
+    </p>
+  </h3>
+  <h3>
+    <p>
+      <a
+        href="/forgottenlogininfo"
+        id="forgotten-login-info-link"
+        onClick={[Function]}
+      >
+        Forgotten your Login info?
+      </a>
+    </p>
   </h3>
 </section>
 `;
