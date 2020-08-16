@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import TokenService from '../../services/token-service';
-import Context from '../../context/Context'
+import Context from '../../context/Context';
 
 export default class LoginForm extends Component{
     static contextType=Context;

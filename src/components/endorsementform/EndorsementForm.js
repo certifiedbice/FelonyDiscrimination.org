@@ -1,23 +1,14 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import EndorsementsApiService from '../../services/endorsements-api-service';
+import TokenService from '../../services/token-service';
 import './EndorsementForm.css';
 
 export default class EndorsementForm extends Component{
-    state={setError:null};
-    handleSubmit=e=>{
-        e.preventDefault()
-        const {endorsement}=e.target;
-        // Have to add in userId when user login system is implemented.
-        // Need to code a check against the endorsements table to look for existing user_id/org_id endorsement
-        // return a notification that the user has already submitted an endorsement if exists
-        EndorsementsApiService.postOrgEndorsements(69,this.props.orgId,endorsement.value)
-            .then(res=>this.props.updateEndorsements(endorsement.value))
-            .catch(this.state.setError);
-    }
-    render(){
+    state={error:null};
+    renderEndorsementForm(){
         return(
-            <div id='organization-endorsement-form-container'>
-                <form id="endorsement-form" name="endorsement-form" aria-label="Endorsement form" onSubmit={this.handleSubmit}>
+            <form id="endorsement-form" name="endorsement-form" aria-label="Endorsement form" onSubmit={this.handleSubmit}>
                     <fieldset>
                         <legend><h3>Submit an Endorsement</h3></legend>
                         <div className="endorsement-form-element-container">
@@ -33,6 +24,25 @@ export default class EndorsementForm extends Component{
                         </div>
                     </fieldset>
                 </form>
+        );
+    }
+    renderEndorsementLoginMessage(){
+        return(<div id='endorsement-login-message'><h3>You must <Link to='/login'>log in</Link> to submit endorsements</h3></div>);
+    }
+    handleSubmit=e=>{
+        e.preventDefault()
+        const {endorsement}=e.target;
+        // Have to add in userId when user login system is implemented.
+        // Need to code a check against the endorsements table to look for existing user_id/org_id endorsement
+        // return a notification that the user has already submitted an endorsement if exists
+        EndorsementsApiService.postOrgEndorsements(69,this.props.orgId,endorsement.value)
+            .then(res=>this.props.updateEndorsements(endorsement.value))
+            .catch(this.state.setError);
+    }
+    render(){
+        return(
+            <div id='organization-endorsement-form-container'>
+                {TokenService.hasAuthToken()?this.renderEndorsementForm():this.renderEndorsementLoginMessage()}
             </div>
         );
 	}

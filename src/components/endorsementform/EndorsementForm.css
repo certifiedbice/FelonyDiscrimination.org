@@ -54,6 +54,12 @@
     color: #e6e7e8;
 }
 
+#endorsement-login-message, #endorsement-login-message h3 {
+    width: 100%;
+    text-align: center;
+    color: #4378bc;
+}
+
 /* Desktop CSS */
 @media(min-width:991px){
     

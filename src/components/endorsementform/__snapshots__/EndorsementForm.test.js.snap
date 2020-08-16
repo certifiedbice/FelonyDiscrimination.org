@@ -4,57 +4,19 @@ exports[`renders correctly 1`] = `
 <div
   id="organization-endorsement-form-container"
 >
-  <form
-    aria-label="Endorsement form"
-    id="endorsement-form"
-    name="endorsement-form"
-    onSubmit={[Function]}
+  <div
+    id="endorsement-login-message"
   >
-    <fieldset>
-      <legend>
-        <h3>
-          Submit an Endorsement
-        </h3>
-      </legend>
-      <div
-        className="endorsement-form-element-container"
+    <h3>
+      You must 
+      <a
+        href="/login"
+        onClick={[Function]}
       >
-        <label>
-          Choose your Endorsement:
-        </label>
-        <select
-          className="endorsement-form-element"
-          id="endorsement-form-select"
-          name="endorsement"
-          required={true}
-        >
-          <option
-            value="1"
-          >
-            Positive
-          </option>
-          <option
-            value="0"
-          >
-            Negative
-          </option>
-        </select>
-      </div>
-      <div
-        className="endorsement-form-error-container"
-      />
-      <div
-        className="endorsement-form-element-container"
-      >
-        <input
-          aria-label="endorsement form submit"
-          id="endorsement-form-submit"
-          required={true}
-          type="submit"
-          value="Submit"
-        />
-      </div>
-    </fieldset>
-  </form>
+        log in
+      </a>
+       to submit endorsements
+    </h3>
+  </div>
 </div>
 `;

@@ -63,58 +63,20 @@ exports[`renders correctly 1`] = `
   <div
     id="organization-endorsement-form-container"
   >
-    <form
-      aria-label="Endorsement form"
-      id="endorsement-form"
-      name="endorsement-form"
-      onSubmit={[Function]}
+    <div
+      id="endorsement-login-message"
     >
-      <fieldset>
-        <legend>
-          <h3>
-            Submit an Endorsement
-          </h3>
-        </legend>
-        <div
-          className="endorsement-form-element-container"
+      <h3>
+        You must 
+        <a
+          href="/login"
+          onClick={[Function]}
         >
-          <label>
-            Choose your Endorsement:
-          </label>
-          <select
-            className="endorsement-form-element"
-            id="endorsement-form-select"
-            name="endorsement"
-            required={true}
-          >
-            <option
-              value="1"
-            >
-              Positive
-            </option>
-            <option
-              value="0"
-            >
-              Negative
-            </option>
-          </select>
-        </div>
-        <div
-          className="endorsement-form-error-container"
-        />
-        <div
-          className="endorsement-form-element-container"
-        >
-          <input
-            aria-label="endorsement form submit"
-            id="endorsement-form-submit"
-            required={true}
-            type="submit"
-            value="Submit"
-          />
-        </div>
-      </fieldset>
-    </form>
+          log in
+        </a>
+         to submit endorsements
+      </h3>
+    </div>
   </div>
   <div
     id="comments-list-title"
@@ -131,66 +93,20 @@ exports[`renders correctly 1`] = `
   <div
     className="organization-comment-form-container"
   >
-    <form
-      aria-label="Comment form"
-      id="comment-form"
-      name="comment-form"
-      onSubmit={[Function]}
+    <div
+      id="comment-login-message"
     >
-      <fieldset>
-        <legend>
-          <h3>
-            Submit a Comment
-          </h3>
-        </legend>
-        <div
-          className="comment-form-element-container"
+      <h3>
+        You must 
+        <a
+          href="/login"
+          onClick={[Function]}
         >
-          <label>
-            Title:
-          </label>
-          <input
-            aria-labelledby="Comment form email"
-            className="comment-form-element"
-            id="comment-form-input"
-            name="title"
-            placeholder="Search"
-            required={true}
-            type="text"
-          />
-        </div>
-        <div
-          className="comment-form-element-container"
-        >
-          <label>
-            Message:
-          </label>
-          <textarea
-            aria-labelledby="review-form-message"
-            className="comment-form-element"
-            cols="27"
-            id="comment-form-message"
-            name="content"
-            required={true}
-            rows="6"
-          />
-        </div>
-        <div
-          className="comment-form-error-container"
-        />
-        <div
-          className="comment-form-element-container"
-        >
-          <input
-            aria-label="comment form submit"
-            id="comment-form-submit"
-            required={true}
-            type="submit"
-            value="Submit"
-          />
-        </div>
-      </fieldset>
-    </form>
+          log in
+        </a>
+         to submit comments
+      </h3>
+    </div>
   </div>
 </section>
 `;
