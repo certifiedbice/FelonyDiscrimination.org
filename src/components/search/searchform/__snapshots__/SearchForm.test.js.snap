@@ -37,6 +37,11 @@ exports[`renders correctly 1`] = `
         className="form-error-container"
       />
       <div
+        className="form-element-container"
+      >
+        Test search query: brownstone
+      </div>
+      <div
         className="form-element-submit-container"
       >
         <input

@@ -28,6 +28,7 @@ export default class SearchForm extends Component{
                             <input id='form-input' name='text' type='text' required aria-labelledby='form-input' placeholder='Search'/>
                         </div>
                         <div className='form-error-container'>{this.props.searchMessage}</div>
+                        <div className='form-element-container'>Test search query: brownstone</div>
                         <div className='form-element-submit-container'>
                             <input id='form-submit' type='submit' required aria-label='form-submit' value='Submit'/>
                         </div>
