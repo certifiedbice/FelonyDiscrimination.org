@@ -9,7 +9,7 @@ export default class Comment extends Component{
 			<div className='comment-item'>
 			    <CommentDate date={comment.date_published}/>
 			    <div id='comment-title'><h3>User says: {comment.title}</h3></div>
-			    <div id='comment-content'>{comment.content}</div>
+			    <div id='comment-comment'>{comment.comment}</div>
 			</div>
 		);
 	}

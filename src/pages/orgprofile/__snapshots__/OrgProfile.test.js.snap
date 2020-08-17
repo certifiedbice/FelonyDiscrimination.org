@@ -61,7 +61,7 @@ exports[`renders correctly 1`] = `
     />
   </div>
   <div
-    id="organization-endorsement-form-container"
+    id="form-container"
   >
     <div
       id="endorsement-login-message"
@@ -91,7 +91,7 @@ exports[`renders correctly 1`] = `
     <div />
   </div>
   <div
-    className="organization-comment-form-container"
+    id="form-container"
   >
     <div
       id="comment-login-message"

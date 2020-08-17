@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
       </h3>
     </div>
     <div
-      id="comment-content"
+      id="comment-comment"
     />
   </div>
   <div
@@ -40,7 +40,7 @@ exports[`renders correctly 1`] = `
       </h3>
     </div>
     <div
-      id="comment-content"
+      id="comment-comment"
     />
   </div>
 </div>

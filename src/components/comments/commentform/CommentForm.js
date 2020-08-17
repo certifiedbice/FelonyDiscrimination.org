@@ -5,7 +5,9 @@ import TokenService from '../../../services/token-service';
 import './CommentForm.css';
 
 export default class CommentForm extends Component{
+    
     state={error:null};
+    
     renderCommentForm(){
         return(
             <form id='comment-form' name='comment-form' aria-label='Comment form' onSubmit={this.handleSubmit}>
@@ -27,9 +29,11 @@ export default class CommentForm extends Component{
             </form>
         );
     }
+    
     renderCommentLoginMessage(){
         return(<div id='comment-login-message'><h3>You must <Link to='/login'>log in</Link> to submit comments</h3></div>);
     }
+   
     handleSubmit=e=>{
         e.preventDefault()
         const {title,comment}=e.target;
@@ -38,11 +42,13 @@ export default class CommentForm extends Component{
             .then(res=>this.props.updateComments(this.props.orgId))
             .catch(this.state.error);
     }
+    
     render(){
         return(
-            <div className='organization-comment-form-container'>
+            <div id='form-container'>
                 {TokenService.hasAuthToken()?this.renderCommentForm():this.renderCommentLoginMessage()}
             </div>
         );
-	}
+    }
+    
 }

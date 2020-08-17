@@ -23,7 +23,7 @@ Array [
           <label
             htmlFor="form-input"
           >
-            Search by: Name, City, State, Zipcode.
+            Search organizations by: Name, City, State, Zipcode.
           </label>
           <input
             aria-labelledby="form-input"

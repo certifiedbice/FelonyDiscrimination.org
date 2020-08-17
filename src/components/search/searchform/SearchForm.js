@@ -24,7 +24,7 @@ export default class SearchForm extends Component{
                     <fieldset>
                         <legend><h2>Search</h2></legend>
                         <div className='form-element-container'>
-                            <label htmlFor='form-input'>Search by: Name, City, State, Zipcode.</label>
+                            <label htmlFor='form-input'>Search organizations by: Name, City, State, Zipcode.</label>
                             <input id='form-input' name='text' type='text' required aria-labelledby='form-input' placeholder='Search'/>
                         </div>
                         <div className='form-error-container'>{this.props.searchMessage}</div>
@@ -36,4 +36,5 @@ export default class SearchForm extends Component{
             </section>
         );
     }
+    
 }

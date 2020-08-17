@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  id="organization-endorsement-form-container"
+  id="form-container"
 >
   <div
     id="endorsement-login-message"
