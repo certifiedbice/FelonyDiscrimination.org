@@ -1,4 +1,4 @@
-# FelonyDiscrimination.org
+#FelonyDiscrimination.org
 
 ![FelonyDiscrimination.org Logo](http://felonydiscrimination.org/static/media/site-logo.d1c35237.png)
 
@@ -14,7 +14,7 @@
 ## Trello Kanban:
 ### https://trello.com/b/jJdB3QEP/felonydiscriminationorg
 
-## GitMind React Component Map:
+## GitMind Component Map:
 ### https://gitmind.com/app/doc/725537041
 
 ## Gitmind HTML Wireframes:
@@ -26,21 +26,38 @@
 ## Fundraising:
 ### https://www.gofundme.com/f/felonydiscriminationorg?utm_source=customer&utm_medium=copy_link&utm_campaign=p_cf+share-flow-1
 
-## Problem:
+# API Information
 
-Discrimination against persons with felony records is openly allowed by legislation. The result is unemployment, homelessness, higher ricidivism rates, and wasted tax money.
+## API Endpoints
+### GET '/'
+### GET /api/orgs/:orgId
+### GET /api/orgs/search
+### POST /api/orgs/submit-org
+### GET /api/orgs/:orgId/comments
+### POST /api/orgs/:orgId/comments
+### POST /api/orgs/:orgId/endorsements
 
-## Solution:
+## Scripts
 
-This app is going to provide a valuable resource to those unprotected souls in the form of a searchable database that lists out “friendly” and “unfriendly” establishments in order to assist them in finding organizations that will house and employ them. Furthermore, this system will be used to collect the data needed to seek amendments to the current legislation.
++ Start the application `npm start`
 
-## Functionality:
++ Start nodemon for the application `npm run dev`
 
-The app allows for submission of organizations into the database for the purposes of archiving friendly
-and unfriendly organizations. Further functionality allows users to mark an organization with either a
-positive or negative endorsement, both of which will be summed, in order to provide a view of the
-organizations practices. The system will also provide a comment system to allow users to attach their
-comments about a particular organization.
++ Run the tests `npm test`
+
++ Migrate the Tables into database ` npm run migrate ` or ` npm run migrate:test ` or `npm run migrate:production`
+
++ Seed Tables with data after migration `npm run seed`
+
++ Predeploy `npm audit && npm run migrate:production`
+
++ Deploy `git push heroku master`
+
+## Deployment
+
+This Server is deployed with Heroku at `https://limitless-reef-44232.herokuapp.com/`.
+
+# React Client Information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -81,32 +98,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# About the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Problem:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Discrimination against persons with felony records is openly allowed by legislation. The result is unemployment, homelessness, higher ricidivism rates, and wasted tax money.
 
-### Code Splitting
+## Solution:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This app is going to provide a valuable resource to those unprotected souls in the form of a searchable database that lists out “friendly” and “unfriendly” establishments in order to assist them in finding organizations that will house and employ them. Furthermore, this system will be used to collect the data needed to seek amendments to the current legislation.
 
-### Analyzing the Bundle Size
+## Functionality:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The app allows for submission of organizations into the database for the purposes of archiving friendly
+and unfriendly organizations. Further functionality allows users to mark an organization with either a
+positive or negative endorsement, both of which will be summed, in order to provide a view of the
+organizations practices. The system will also provide a comment system to allow users to attach their
+comments about a particular organization.
