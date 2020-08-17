@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <section
-  id="search-form-container"
+  id="form-container"
 >
   <form
     aria-label="Search form"
@@ -17,20 +17,16 @@ exports[`renders correctly 1`] = `
         </h2>
       </legend>
       <div
-        className="search-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          <p>
-            Suggested search criteria:
-          </p>
-          <p>
-            Name, City, State, Zipcode.
-          </p>
+        <label
+          htmlFor="form-input"
+        >
+          Search by: Name, City, State, Zipcode.
         </label>
         <input
-          aria-labelledby="Search form email"
-          className="search-form-element"
-          id="search-form-input"
+          aria-labelledby="form-input"
+          id="form-input"
           name="text"
           placeholder="Search"
           required={true}
@@ -38,14 +34,14 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="search-form-error-container"
+        className="form-error-container"
       />
       <div
-        className="search-form-element-container"
+        className="form-element-submit-container"
       >
         <input
-          aria-label="Search form submit"
-          id="search-form-submit"
+          aria-label="form-submit"
+          id="form-submit"
           required={true}
           type="submit"
           value="Submit"

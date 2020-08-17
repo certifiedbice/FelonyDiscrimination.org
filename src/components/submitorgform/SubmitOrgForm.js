@@ -14,11 +14,11 @@ export default class SubmitOrgForm extends Component{
     }
     render(){
         return(
-            <section id="submit-form-container">
-                    <form id="submit-form" name="submit-form" aria-label="Report discrimination form" onSubmit={this.handleSubmit}>
+            <section id='form-container'>
+                    <form id='submit-org-form' name='submit-org-form' aria-label='submit-org-form' onSubmit={this.handleSubmit}>
                         <fieldset>
-                            <legend><h2>Submit an Organization</h2></legend>
-                            <div id="submit-form-instructions">
+                            <legend><h2 id='submit-org-h2'>Submit an Organization</h2></legend>
+                            <div id='submit-org-form-instructions'>
                                 <p>
                                     We invite you to submit organizations into the database, where they can then be reviewed as positive or negative for discrimination. 
                                 </p>
@@ -26,108 +26,106 @@ export default class SubmitOrgForm extends Component{
                                     We would like to thank you for taking the time to submit an entry, every entry is one step closer to a solution.
                                 </p>
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization name:</label>
-                                <input className="submit-form-element" name="org_name" id="submit-form-organization-name" type="text" required aria-labelledby="submit-form-organization-name" placeholder="Name"/>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-name'>Organization name:</label>
+                                <input id='submit-org-form-organization-name' name='org_name' type='text' required aria-labelledby='submit-org-form-organization-name' placeholder='Name'/>
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization phone:</label>
-                                <input className="submit-form-element" name="org_phone" id="submit-form-organization-phone" type="tel" aria-labelledby="submit-form-organization-phone" placeholder="Organization phone number"/>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-phone'>Phone:</label>
+                                <input id='submit-org-form-organization-phone' name='org_phone' type='tel' aria-labelledby='submit-org-form-organization-phone' placeholder='Organization phone number'/>
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization street address:</label>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-street-address'>Street address:</label>
                                 <input 
-                                    className="submit-form-element" 
-                                    name="org_st_addr" 
-                                    id="submit-form-organization-street-address" 
-                                    type="text" 
+                                    id='submit-org-form-organization-street-address' 
+                                    name='org_st_addr' 
+                                    type='text' 
                                     required 
-                                    aria-labelledby="submit-form-organization-street-address" 
-                                    placeholder="Street address"
+                                    aria-labelledby='submit-org-form-organization-street-address' 
+                                    placeholder='Street address'
                                 />
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization City:</label>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-city'>City:</label>
                                 <input 
-                                    className="submit-form-element" 
-                                    name="org_city" 
-                                    id="submit-form-organization-city" 
-                                    type="text" 
+                                    id='submit-org-form-organization-city' 
+                                    name='org_city' 
+                                    type='text' 
                                     required 
-                                    aria-labelledby="submit-form-organization-city" 
-                                    placeholder="City"
+                                    aria-labelledby='submit-org-form-organization-city' 
+                                    placeholder='City'
                                 />
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization State:</label>
-                                <select className="submit-form-element" name="org_state" id="submit-form-organization-state" required>
-                                    <option value="AL">AL</option>
-                                    <option value="AK">AK</option>
-                                    <option value="AZ">AZ</option>
-                                    <option value="AR">AR</option>
-                                    <option value="CA">CA</option>
-                                    <option value="CO">CO</option>
-                                    <option value="CT">CT</option>
-                                    <option value="DE">DE</option>
-                                    <option value="FL">FL</option>
-                                    <option value="GA">GA</option>
-                                    <option value="HI">HI</option>
-                                    <option value="ID">ID</option>
-                                    <option value="IL">IL</option>
-                                    <option value="IN">IN</option>
-                                    <option value="IA">IA</option>
-                                    <option value="KS">KS</option>
-                                    <option value="KY">KY</option>
-                                    <option value="LA">LA</option>
-                                    <option value="ME">ME</option>
-                                    <option value="MD">MD</option>
-                                    <option value="MA">MA</option>
-                                    <option value="MI">MI</option>
-                                    <option value="MN">MN</option>
-                                    <option value="MS">MS</option>
-                                    <option value="MO">MO</option>
-                                    <option value="MT">MT</option>
-                                    <option value="NE">NE</option>
-                                    <option value="NV">NV</option>
-                                    <option value="NH">NH</option>
-                                    <option value="NJ">NJ</option>
-                                    <option value="NM">NM</option>
-                                    <option value="NY">NY</option>
-                                    <option value="NC">NC</option>
-                                    <option value="ND">ND</option>
-                                    <option value="OH">OH</option>
-                                    <option value="OK">OK</option>
-                                    <option value="OR">OR</option>
-                                    <option value="PA">PA</option>
-                                    <option value="RI">RI</option>
-                                    <option value="SC">SC</option>
-                                    <option value="SD">SD</option>
-                                    <option value="TN">TN</option>
-                                    <option value="TX">TX</option>
-                                    <option value="UT">UT</option>
-                                    <option value="VT">VT</option>
-                                    <option value="VA">VA</option>
-                                    <option value="WA">WA</option>
-                                    <option value="WV">WV</option>
-                                    <option value="WI">WI</option>
-                                    <option value="WY">WY</option>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-state'>State:</label>
+                                <select id='submit-org-form-organization-state' name='org_state' required aria-labelledby='submit-org-form-organization-state'>
+                                    <option value='AL'>AL</option>
+                                    <option value='AK'>AK</option>
+                                    <option value='AZ'>AZ</option>
+                                    <option value='AR'>AR</option>
+                                    <option value='CA'>CA</option>
+                                    <option value='CO'>CO</option>
+                                    <option value='CT'>CT</option>
+                                    <option value='DE'>DE</option>
+                                    <option value='FL'>FL</option>
+                                    <option value='GA'>GA</option>
+                                    <option value='HI'>HI</option>
+                                    <option value='ID'>ID</option>
+                                    <option value='IL'>IL</option>
+                                    <option value='IN'>IN</option>
+                                    <option value='IA'>IA</option>
+                                    <option value='KS'>KS</option>
+                                    <option value='KY'>KY</option>
+                                    <option value='LA'>LA</option>
+                                    <option value='ME'>ME</option>
+                                    <option value='MD'>MD</option>
+                                    <option value='MA'>MA</option>
+                                    <option value='MI'>MI</option>
+                                    <option value='MN'>MN</option>
+                                    <option value='MS'>MS</option>
+                                    <option value='MO'>MO</option>
+                                    <option value='MT'>MT</option>
+                                    <option value='NE'>NE</option>
+                                    <option value='NV'>NV</option>
+                                    <option value='NH'>NH</option>
+                                    <option value='NJ'>NJ</option>
+                                    <option value='NM'>NM</option>
+                                    <option value='NY'>NY</option>
+                                    <option value='NC'>NC</option>
+                                    <option value='ND'>ND</option>
+                                    <option value='OH'>OH</option>
+                                    <option value='OK'>OK</option>
+                                    <option value='OR'>OR</option>
+                                    <option value='PA'>PA</option>
+                                    <option value='RI'>RI</option>
+                                    <option value='SC'>SC</option>
+                                    <option value='SD'>SD</option>
+                                    <option value='TN'>TN</option>
+                                    <option value='TX'>TX</option>
+                                    <option value='UT'>UT</option>
+                                    <option value='VT'>VT</option>
+                                    <option value='VA'>VA</option>
+                                    <option value='WA'>WA</option>
+                                    <option value='WV'>WV</option>
+                                    <option value='WI'>WI</option>
+                                    <option value='WY'>WY</option>
                                 </select>
                             </div>
-                            <div className="submit-form-element-container">	
-                                <label>Organization Zip code:</label>
-                                <input className="submit-form-element" name="org_zipcode" id="submit-form-organization-zip-code" type="text" required aria-labelledby="submit-form-organization-zip-code" placeholder="Zip code"/>
+                            <div className='form-element-container'>	
+                                <label htmlFor='submit-org-form-organization-zip-code'>Zip code:</label>
+                                <input id='submit-org-form-organization-zip-code' name='org_zipcode' type='text' required aria-labelledby='submit-org-form-organization-zip-code' placeholder='Zip code'/>
                             </div>
-                            <div className="submit-form-element-container">
-                                <label>Organization Type:</label>
-                                <select className="submit-form-element" name="org_type" id="submit-form-organization-type" required>
-                                    <option value="employment" disabled>Employment</option>
-                                    <option value="housing">Housing</option>
+                            <div className='form-element-container'>
+                                <label htmlFor='submit-org-form-organization-type'>Organization Type:</label>
+                                <select id='submit-org-form-organization-type' name='org_type' required aria-labelledby='submit-org-form-organization-type'>
+                                    <option value='employment' disabled>Employment</option>
+                                    <option value='housing'>Housing</option>
                                 </select>
                             </div>
-                            <div className="submit-form-error-container">
+                            <div className='form-error-container'>
                             </div>
-                            <div className="submit-form-element-container">
-                                <input id="submit-form-submit" type="submit" required aria-label="submit form submit" value="Submit"/>
+                            <div className='form-element-submit-container'>
+                                <input id='form-submit' type='submit' required aria-label='form-submit' value='Submit'/>
                             </div>
                         </fieldset>
                     </form>

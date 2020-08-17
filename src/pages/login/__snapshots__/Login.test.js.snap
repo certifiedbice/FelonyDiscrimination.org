@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <section
-  id="login-form-container"
+  id="form-container"
 >
   <form
     aria-label="Login form"
@@ -17,7 +17,7 @@ exports[`renders correctly 1`] = `
         </h2>
       </legend>
       <div
-        className="login-form-element-container"
+        className="form-element-container"
       >
         <label
           htmlFor="login-form-email"
@@ -25,8 +25,7 @@ exports[`renders correctly 1`] = `
           Email: 
         </label>
         <input
-          aria-labelledby="Login form email"
-          className="login-form-element"
+          aria-labelledby="login-form-email"
           id="login-form-email"
           name="email"
           placeholder="Email"
@@ -35,7 +34,7 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="login-form-element-container"
+        className="form-element-container"
       >
         <label
           htmlFor="login-form-password"
@@ -43,8 +42,7 @@ exports[`renders correctly 1`] = `
           Password: 
         </label>
         <input
-          aria-labelledby="Login form password"
-          className="login-form-element"
+          aria-labelledby="login-form-password"
           id="login-form-password"
           name="password"
           placeholder="Password"
@@ -53,14 +51,14 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="login-form-error-container"
+        className="form-error-container"
       />
       <div
-        className="login-form-element-container"
+        className="form-element-submit-container"
       >
         <input
-          aria-label="Login form submit"
-          id="login-form-submit"
+          aria-label="form-submit"
+          id="form-submit"
           type="submit"
           value="Submit"
         />

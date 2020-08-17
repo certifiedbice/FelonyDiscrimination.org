@@ -2,7 +2,9 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <h2>
+  <h2
+    className="home-h2"
+  >
     Let us make change happen, together.
   </h2>
   <p>
@@ -18,13 +20,17 @@ exports[`renders correctly 1`] = `
     </a>
      to learn more.
   </p>
-  <h3>
+  <h3
+    className="home-h3"
+  >
     Our Mission
   </h3>
   <p>
     Combating the rampant discrimination against persons with a felony history. If you have been the victim of this type of blanket policy, we invite you to report that organization here. Opposite that, if you have been given an opportunity, we invite you to recommend that organization here.
   </p>
-  <h3>
+  <h3
+    className="home-h3"
+  >
     Contribute
   </h3>
   <p>

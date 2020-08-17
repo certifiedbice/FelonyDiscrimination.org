@@ -22,20 +22,20 @@ export default class LoginForm extends Component{
 	render(){
 		const {error}=this.state;
         return(
-            <form id="login-form" name="login-form" aria-label="Login form" onSubmit={this.handleSubmitBasicAuth}>
+            <form id='login-form' name='login-form' aria-label='Login form' onSubmit={this.handleSubmitBasicAuth}>
 	            <fieldset>
 					<legend><h2>Login</h2></legend>
-					<div className="login-form-element-container">
+					<div className='form-element-container'>
 						<label htmlFor='login-form-email'>Email: </label>
-						<input className="login-form-element" name="email" id="login-form-email" type="text" required aria-labelledby="Login form email" placeholder="Email"/>
+						<input id='login-form-email' name='email' type='text' required aria-labelledby='login-form-email' placeholder='Email'/>
 					</div>
-					<div className="login-form-element-container">
+					<div className='form-element-container'>
 						<label htmlFor='login-form-password'>Password: </label>
-						<input className="login-form-element" name="password" id="login-form-password" type="password" required aria-labelledby="Login form password" placeholder="Password"/>
+						<input id='login-form-password' name='password' type='password' required aria-labelledby='login-form-password' placeholder='Password'/>
 					</div>
-					<div className="login-form-error-container"></div>
-					<div className="login-form-element-container">
-                        <input id="login-form-submit" type="submit" aria-label="Login form submit" value="Submit"/>
+					<div className='form-error-container'></div>
+					<div className='form-element-submit-container'>
+                        <input id='form-submit' type='submit' aria-label='form-submit' value='Submit'/>
 					</div>
 				</fieldset>
 			</form>

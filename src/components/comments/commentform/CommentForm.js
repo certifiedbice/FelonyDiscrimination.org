@@ -8,20 +8,20 @@ export default class CommentForm extends Component{
     state={error:null};
     renderCommentForm(){
         return(
-            <form id="comment-form" name="comment-form" aria-label="Comment form" onSubmit={this.handleSubmit}>
+            <form id='comment-form' name='comment-form' aria-label='Comment form' onSubmit={this.handleSubmit}>
                 <fieldset>
                     <legend><h3>Submit a Comment</h3></legend>
-                        <div className="comment-form-element-container">
-                            <label>Title:</label>
-                            <input className="comment-form-element" name="title" id="comment-form-input" type="text" required aria-labelledby="Comment form email" placeholder="Search"/>
+                        <div className='form-element-container'>
+                            <label htmlFor='comment-form-input'>Title:</label>
+                            <input id='comment-form-input' name='title' type='text' required aria-labelledby='comment-form-input' placeholder='Title'/>
                         </div>
-                        <div className="comment-form-element-container">
-                            <label>Message:</label>
-                            <textarea className="comment-form-element" name="comment" id="comment-form-message" rows="6" cols="27" required aria-labelledby="review-form-message"/>
+                        <div className='form-element-container'>
+                            <label htmlFor='comment-form-message'>Message:</label>
+                            <textarea id='comment-form-message' name='comment' rows='6' cols='27' required aria-labelledby='comment-form-message'/>
                         </div>
-                        <div className="comment-form-error-container"></div>
-                        <div className="comment-form-element-container">
-                            <input id="comment-form-submit" type="submit" required aria-label="comment form submit" value="Submit"/>
+                        <div className='form-error-container'></div>
+                        <div className='form-element-container'>
+                            <input id='form-submit' type='submit' required aria-label='form-submit' value='Submit'/>
                         </div>
                 </fieldset>
             </form>
@@ -40,7 +40,7 @@ export default class CommentForm extends Component{
     }
     render(){
         return(
-            <div className="organization-comment-form-container">
+            <div className='organization-comment-form-container'>
                 {TokenService.hasAuthToken()?this.renderCommentForm():this.renderCommentLoginMessage()}
             </div>
         );

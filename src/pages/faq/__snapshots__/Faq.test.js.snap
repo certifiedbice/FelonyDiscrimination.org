@@ -2,7 +2,9 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <h2>
+  <h2
+    className="faq-h2"
+  >
     Faq Page
   </h2>
 </div>

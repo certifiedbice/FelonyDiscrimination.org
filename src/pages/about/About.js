@@ -5,7 +5,7 @@ import './About.css';
 export default function About(){
 	return(
 		<div>
-			<h2>Est. 2020:</h2>
+			<h2 className='about-h2'>Est. 2020:</h2>
 			<p>
 				This organization sprang from a dire need to address the lack of
 				protection afforded to those in posession of a felony record. This

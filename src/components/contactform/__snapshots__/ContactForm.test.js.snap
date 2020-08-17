@@ -9,19 +9,22 @@ exports[`renders correctly 1`] = `
 >
   <fieldset>
     <legend>
-      <h2>
+      <h2
+        className="contact-h2"
+      >
         Contact Us
       </h2>
     </legend>
     <div
-      className="contact-form-element-container"
+      className="form-element-container"
     >
-      <label>
+      <label
+        htmlFor="contact-form-name"
+      >
         Name: 
       </label>
       <input
-        aria-labelledby="Contact form name"
-        className="contact-form-element"
+        aria-labelledby="contact-form-name"
         id="contact-form-name"
         name="name"
         placeholder="Name"
@@ -30,14 +33,15 @@ exports[`renders correctly 1`] = `
       />
     </div>
     <div
-      className="contact-form-element-container"
+      className="form-element-container"
     >
-      <label>
+      <label
+        htmlFor="contact-form-email"
+      >
         Email: 
       </label>
       <input
-        aria-labelledby="Contact form email"
-        className="contact-form-element"
+        aria-labelledby="contact-form-email"
         id="contact-form-email"
         name="email"
         placeholder="your@email.com"
@@ -46,14 +50,15 @@ exports[`renders correctly 1`] = `
       />
     </div>
     <div
-      className="contact-form-element-container"
+      className="form-element-container"
     >
-      <label>
+      <label
+        htmlFor="contact-form-message"
+      >
         Message: 
       </label>
       <textarea
-        aria-labelledby="Contact form message"
-        className="contact-form-element"
+        aria-labelledby="contact-form-message"
         cols="30"
         id="contact-form-message"
         name="message"
@@ -62,11 +67,11 @@ exports[`renders correctly 1`] = `
       />
     </div>
     <div
-      className="contact-form-element-container"
+      className="form-element-submit-container"
     >
       <input
-        aria-label="Contact form submit"
-        id="contact-form-submit"
+        aria-label="form-submit"
+        id="form-submit"
         required={true}
         type="submit"
         value="Submit"

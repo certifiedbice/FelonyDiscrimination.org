@@ -10,12 +10,20 @@ export default class Search extends Component{
 		error:null,
 	};
 
-	storeSearchResults=res=>{this.setState({search_results:[...res]})}
+	storeSearchResults=res=>{
+		console.log(res)
+		if(res.length>0){
+			this.setState({search_results:[...res]})
+		}
+        else{
+			this.setState({error:'No results found'})
+		}
+	}
 
 	render(){
         return(
 			<>
-				<SearchForm storeSearchResults={this.storeSearchResults}/>
+				<SearchForm storeSearchResults={this.storeSearchResults} searchMessage={this.state.error}/>
 				<SearchResultsList search_results={this.state.search_results}/>
 			</>
 		);

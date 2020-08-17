@@ -15,23 +15,23 @@ export default class SearchForm extends Component{
     }
     render(){
         return(
-            <form id="contact-form" name="contact-form" aria-label="Contact form" onSubmit={this.handleSubmit}>
+            <form id='contact-form' name='contact-form' aria-label='Contact form' onSubmit={this.handleSubmit}>
 					<fieldset>
-						<legend><h2>Contact Us</h2></legend>
-						<div className="contact-form-element-container">
-							<label>Name: </label>
-							<input className="contact-form-element" name="name" id="contact-form-name" type="text" required aria-labelledby="Contact form name" placeholder="Name"/>
+						<legend><h2 className='contact-h2'>Contact Us</h2></legend>
+						<div className='form-element-container'>
+							<label htmlFor='contact-form-name'>Name: </label>
+							<input id='contact-form-name' name='name' type='text' required aria-labelledby='contact-form-name' placeholder='Name'/>
 						</div>
-						<div className="contact-form-element-container">
-							<label>Email: </label>
-							<input className="contact-form-element" name="email" id="contact-form-email" type="email" required aria-labelledby="Contact form email" placeholder="your@email.com"/>
+						<div className='form-element-container'>
+							<label htmlFor='contact-form-email'>Email: </label>
+							<input id='contact-form-email' name='email' type='email' required aria-labelledby='contact-form-email' placeholder='your@email.com'/>
 						</div>
-						<div className="contact-form-element-container">
-							<label>Message: </label>
-							<textarea className="contact-form-element" name="message" id="contact-form-message" rows="6" cols="30" required aria-labelledby="Contact form message"/>
+						<div className='form-element-container'>
+							<label htmlFor='contact-form-message'>Message: </label>
+							<textarea id='contact-form-message' name='message' rows='6' cols='30' required aria-labelledby='contact-form-message'/>
 						</div>
-						<div className="contact-form-element-container">
-							<input id="contact-form-submit" type="submit" required aria-label="Contact form submit" value="Submit"/>
+						<div className='form-element-submit-container'>
+							<input id='form-submit' type='submit' required aria-label='form-submit' value='Submit'/>
 						</div>
 					</fieldset>
 				</form>

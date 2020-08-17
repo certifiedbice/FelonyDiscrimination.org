@@ -2,10 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <section
-  id="signup-form-container"
+  id="form-container"
 >
   <form
-    aria-label="Signup form"
+    aria-label="signup-form"
     id="signup-form"
     name="signup-form"
   >
@@ -16,14 +16,15 @@ exports[`renders correctly 1`] = `
         </h2>
       </legend>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          First Name: 
+        <label
+          htmlFor="signup-form-first-name"
+        >
+          First Name:
         </label>
         <input
           aria-labelledby="signup-form-first-name"
-          className="signup-form-element"
           id="signup-form-first-name"
           name="signup-form-first-name"
           placeholder="First Name"
@@ -32,14 +33,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          Last Name: 
+        <label
+          htmlFor="signup-form-last-name"
+        >
+          Last Name:
         </label>
         <input
           aria-labelledby="signup-form-last-name"
-          className="signup-form-element"
           id="signup-form-last-name"
           name="signup-form-last-name"
           placeholder="Last Name"
@@ -48,14 +50,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          Email: 
+        <label
+          htmlFor="signup-form-email"
+        >
+          Email:
         </label>
         <input
           aria-labelledby="signup-form-password"
-          className="signup-form-element"
           id="signup-form-email"
           name="signup-form-email"
           placeholder="Email"
@@ -64,14 +67,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          City: 
+        <label
+          htmlFor="signup-form-city"
+        >
+          City:
         </label>
         <input
           aria-labelledby="signup-form-city"
-          className="signup-form-element"
           id="signup-form-city"
           name="signup-form-city"
           placeholder="City"
@@ -80,13 +84,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
+        <label
+          htmlFor="signup-form-state"
+        >
           State:
         </label>
         <select
-          className="signup-form-element"
+          aria-labelledby="signup-form-state"
           id="signup-form-state"
           name="signup-form-state"
           required={true}
@@ -344,14 +350,15 @@ exports[`renders correctly 1`] = `
         </select>
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          Zip Code: 
+        <label
+          htmlFor="signup-form-zipcode"
+        >
+          Zip Code:
         </label>
         <input
           aria-labelledby="signup-form-zipcode"
-          className="signup-form-element"
           id="signup-form-zipcode"
           name="signup-form-zipcode"
           placeholder="Zip Code"
@@ -360,14 +367,15 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-container"
       >
-        <label>
-          Password: 
+        <label
+          htmlFor="signup-form-password"
+        >
+          Password:
         </label>
         <input
           aria-labelledby="signup-form-password"
-          className="signup-form-element"
           id="signup-form-password"
           name="signup-form-password"
           placeholder="Password"
@@ -376,11 +384,11 @@ exports[`renders correctly 1`] = `
         />
       </div>
       <div
-        className="signup-form-element-container"
+        className="form-element-submit-container"
       >
         <input
-          aria-label="Signup form submit"
-          id="signup-form-submit"
+          aria-label="form-submit"
+          id="form-submit"
           required={true}
           type="submit"
           value="Submit"
