@@ -1,16 +1,10 @@
 const path=require('path');
 const express=require('express');
-const xss=require('xss');
 const CommentsService=require('./comments-service');
+const {requireAuth}=require('../middleware/basic-auth');
 const commentsRouter=express.Router();
-const jsonParser=express.json();
-const serializeEndorsement=comment=>({
-    id:comment.id,
-    user_id:xss(comment.user_id),
-    org_id:xss(comment.org_id),
-    title:xss(comment.title),
-    comment:xss(comment.comment)
-});
+const jsonBodyParser=express.json();
+
 commentsRouter
     .route('/')
     .all((req,res,next)=>{
@@ -35,14 +29,15 @@ commentsRouter
             comments:res.org
         });
     })
-    .post(jsonParser,(req,res,next)=>{
-        const {user_id,org_id,title,content}=req.body;
-        const newComment={user_id,org_id,title,content};
+    .post(requireAuth,jsonBodyParser,(req,res,next)=>{
+        const {org_id,title,comment}=req.body;
+        const newComment={org_id,title,comment};
         for(const [key,value] of Object.entries(newComment))
         if(value==null)
             return res.status(400).json({
                 error:{message:`Missing '${key}' in request body`}
             })
+            newComment.user_id=req.user.id;
             CommentsService.insertComment(
                 req.app.get('db'),
                 newComment
@@ -51,7 +46,7 @@ commentsRouter
                 res
                 .status(201)
                 .location(path.posix.join(req.originalUrl))
-                .json(serializeEndorsement(comment))
+                .json(CommentsService.serializeEndorsement(comment))
             })
             .catch(next)
     });

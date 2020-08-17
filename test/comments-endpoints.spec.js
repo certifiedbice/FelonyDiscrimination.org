@@ -2,11 +2,9 @@ const knex=require('knex');
 const app=require('../src/app');
 const helpers=require('./test-helpers');
 
-//app.use('/api/orgs/:orgId/comments',commentsRouter)
-
 describe('Endpoints',function(){
 	let db;
-	const {testUsers,testOrgs,testEndorsements}=helpers.makeEndorsementsFixtures();
+	const {testUsers,testOrgs}=helpers.makeCommentsFixtures();
 	
 	before('make knex instance',()=>{
 		db=knex({client:'pg',connection:process.env.TEST_DATABASE_URL});
@@ -19,47 +17,48 @@ describe('Endpoints',function(){
 	
 	afterEach('cleanup',()=>helpers.cleanTables(db));
 
-	describe(`POST /api/orgs/:orgId/endorsements`,()=>{
+	describe(`POST /api/orgs/:orgId/comments`,()=>{
 		beforeEach('insert users',()=>helpers.seedUsersTables(db,testUsers));
 		beforeEach('insert organizations',()=>helpers.seedOrgsTables(db,testOrgs));
-		const newEndorsement=helpers.makeNewEndorsement();
-		it(`creates an organization, responding with 201 and the new organization`,()=>{
+		const newComment=helpers.makeNewComment();
+		it(`creates a comment, responding with 201 and the comment`,()=>{
 			return supertest(app)
-				.post('/api/orgs/:orgId/endorsements')
+				.post('/api/orgs/:orgId/comments')
 				.set('Authorization',helpers.makeAuthHeader(testUsers[0]))
-				.send(newEndorsement)
+				.send(newComment)
 			  	.expect(201)
 			  	.expect(res=>{
-					expect(res.body.id).to.eql(newEndorsement.id);
-					expect(res.body.org_id).to.eql(newEndorsement.org_id);
-					expect(res.body.endorsement).to.eql(newEndorsement.endorsement);
-					expect(res.body.date_published).to.eql(newEndorsement.date_published);
+					expect(res.body.id).to.eql(newComment.id);
+					expect(res.body.title).to.eql(newComment.title);
+					expect(res.body.org_id).to.eql(newComment.org_id);
+					expect(res.body.comment).to.eql(newComment.comment);
+					expect(res.body.date_published).to.eql(newComment.date_published);
 			  	});
 		});
-		const requiredFields=['org_id','endorsement'];
+		const requiredFields=['title','org_id','comment'];
 		requiredFields.forEach(field=>{
-			const newEndorsement=helpers.makeNewEndorsement(testUsers[0].id,0);
+			const newComment=helpers.makeNewComment();
 			it(`responds with 400 and an error message when the '${field}' is missing`,()=>{
-				delete newEndorsement[field]
+				delete newComment[field]
 				return supertest(app)
-					.post('/api/orgs/:orgId/endorsements')
+					.post('/api/orgs/:orgId/comments')
 					.set('Authorization',helpers.makeAuthHeader(testUsers[0]))
-					.send(newEndorsement)
+					.send(newComment)
 					.expect(400,{
 						error:{message:`Missing '${field}' in request body`}
 					});
 			});
 		});
 		it('removes XSS attack content from response',()=>{
-			const {maliciousOrg,expectedOrg}=helpers.makeMaliciousOrg();
+			const {maliciousComment,expectedComment}=helpers.makeMaliciousComment();
 			return supertest(app)
-				.post('/api/orgs/submit-org')
+				.post('/api/orgs/:orgId/comments')
 				.set('Authorization',helpers.makeAuthHeader(testUsers[0]))
-				.send(maliciousOrg)
+				.send(maliciousComment)
 				.expect(201)
 				.expect(res=>{
-					expect(res.body.org_id).to.eql(expectedOrg.org_id);
-					expect(res.body.endorsement).to.eql(expectedOrg.endorsement);
+					expect(res.body.title).to.eql(expectedComment.title);
+					expect(res.body.comment).to.eql(expectedComment.comment);
 				});
 		});
 	});	

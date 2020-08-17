@@ -21,7 +21,7 @@ describe('Endpoints',function(){
 		beforeEach('insert users',()=>helpers.seedUsersTables(db,testUsers));
 		beforeEach('insert organizations',()=>helpers.seedOrgsTables(db,testOrgs));
 		const newEndorsement=helpers.makeNewEndorsement();
-		it(`creates an organization, responding with 201 and the new organization`,()=>{
+		it(`creates an endorsement, responding with 201 and the new endorsement`,()=>{
 			return supertest(app)
 				.post('/api/orgs/:orgId/endorsements')
 				.set('Authorization',helpers.makeAuthHeader(testUsers[0]))
@@ -36,7 +36,7 @@ describe('Endpoints',function(){
 		});
 		const requiredFields=['org_id','endorsement'];
 		requiredFields.forEach(field=>{
-			const newEndorsement=helpers.makeNewEndorsement(testUsers[0].id,0);
+			const newEndorsement=helpers.makeNewEndorsement();
 			it(`responds with 400 and an error message when the '${field}' is missing`,()=>{
 				delete newEndorsement[field]
 				return supertest(app)
@@ -49,15 +49,14 @@ describe('Endpoints',function(){
 			});
 		});
 		it('removes XSS attack content from response',()=>{
-			const {maliciousOrg,expectedOrg}=helpers.makeMaliciousOrg();
+			const {maliciousEndorsement,expectedEndorsement}=helpers.makeMaliciousEndorsement();
 			return supertest(app)
-				.post('/api/orgs/submit-org')
+				.post('/api/orgs/:orgId/endorsements')
 				.set('Authorization',helpers.makeAuthHeader(testUsers[0]))
-				.send(maliciousOrg)
+				.send(maliciousEndorsement)
 				.expect(201)
 				.expect(res=>{
-					expect(res.body.org_id).to.eql(expectedOrg.org_id);
-					expect(res.body.endorsement).to.eql(expectedOrg.endorsement);
+					expect(res.body.endorsement).to.eql(expectedEndorsement.endorsement);
 				});
 		});
 	});	

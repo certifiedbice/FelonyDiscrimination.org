@@ -130,7 +130,7 @@ function makeCommentsArray(users,orgs){
 			title:'Total waste of time!',
 			user_id:users[0].id,
 			org_id:orgs[0].id,
-			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
@@ -138,7 +138,7 @@ function makeCommentsArray(users,orgs){
 			title:'Great Place',
 			user_id:users[1].id,
 			org_id:orgs[1].id,
-			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
@@ -146,7 +146,7 @@ function makeCommentsArray(users,orgs){
 			title:'Terrible!',
 			user_id:users[2].id,
 			org_id:orgs[2].id,
-			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
@@ -154,7 +154,7 @@ function makeCommentsArray(users,orgs){
 			title:'Unbelievable!',
 			user_id:users[3].id,
 			org_id:orgs[3].id,
-			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			date_published:new Date('2029-01-22T16:28:32.615Z')
 		},
   		{
@@ -162,7 +162,7 @@ function makeCommentsArray(users,orgs){
 			title:'Highly recommend',
 			user_id:users[4].id,
 			org_id:orgs[4].id,
-			content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			date_published:new Date('2029-01-22T16:28:32.615Z')
 		}
 	];
@@ -237,30 +237,16 @@ function makeNewOrg(){
 function makeNewEndorsement(){
 	return{
 		org_id:'1',
-		endorsement:'true',
+		endorsement:'true'
 	}
 }
 
-function makeExpectedArticleComments(users,articleId,comments){
-	const expectedComments = comments
-		.filter(comment => comment.article_id === articleId)
-
-	return expectedComments.map(comment => {
-		const commentUser = users.find(user => user.id === comment.user_id)
-		return {
-			id: comment.id,
-			text: comment.text,
-			date_created: comment.date_created.toISOString(),
-			user: {
-				id: commentUser.id,
-				user_name: commentUser.user_name,
-				full_name: commentUser.full_name,
-				nickname: commentUser.nickname,
-				date_created: commentUser.date_created.toISOString(),
-				date_modified: commentUser.date_modified || null,
-			}
-		}
-	})
+function makeNewComment(){
+	return{
+		title:'test',
+		org_id:'1',
+		comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+	}
 }
 
 function makeMaliciousOrg(){
@@ -277,13 +263,13 @@ function makeMaliciousOrg(){
 		org_type:'housing'	  
 	}
 	const expectedOrg={
-	  ...maliciousOrg,
-	  org_name:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
-	  org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
+		...maliciousOrg,
+		org_name:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
+		org_st_addr:`Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
 	}
 	return {
-	  maliciousOrg,
-	  expectedOrg,
+		maliciousOrg,
+		expectedOrg,
 	}
 }
 
@@ -293,17 +279,35 @@ function makeMaliciousComment(){
 	  	title:'Naughty naughty very naughty <script>alert("xss");</script>',
 		user_id:'1',
 		org_id:'1',
-		content:`Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
+		comment:`Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
 		date_published:new Date().toISOString()
 	}
 	const expectedComment={
-	  ...maliciousComment,
-	  title:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
-	  content: `Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
+		...maliciousComment,
+		title:'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
+		comment: `Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
 	}
 	return {
-	  maliciousComment,
-	  expectedComment,
+		maliciousComment,
+		expectedComment,
+	}
+}
+
+function makeMaliciousEndorsement(){
+	const maliciousEndorsement={
+	  	id:911,
+		user_id:'1',
+		org_id:'1',
+		endorsement:`Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
+		date_published:new Date().toISOString()
+	}
+	const expectedEndorsement={
+		...maliciousEndorsement,
+		endorsement: `Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
+	}
+	return {
+		maliciousEndorsement,
+		expectedEndorsement,
 	}
 }
 
@@ -319,6 +323,13 @@ function makeEndorsementsFixtures(){
 	const testOrgs=makeOrgsArray();
 	const testEndorsements=makeEndorsementsArray(testUsers,testOrgs);
 	return {testUsers,testOrgs,testEndorsements};
+}
+
+function makeCommentsFixtures(){
+	const testUsers=makeUsersArray();
+	const testOrgs=makeOrgsArray();
+	const testComments=makeCommentsArray(testUsers,testOrgs);
+	return {testUsers,testOrgs,testComments};
 }
 
 function cleanTables(db){
@@ -346,10 +357,10 @@ function cleanTables(db){
     )
 }
 
-function seedOrgsTables(db,organizations){
+function seedOrgsTables(db,orgs){
 	// use a transaction to group the queries and auto rollback on any failure
 	return db.transaction(async trx=>{
-		await trx.into('organizations').insert(organizations);
+		await trx.into('organizations').insert(orgs);
 		// update the auto sequence to match the forced id values
 
 		// need to add id's into the make function before this can be uncommented,
@@ -378,8 +389,40 @@ function seedUsersTables(db,users){
 	});
 }
 
-function seedMaliciousOrg(db,organization){
-	return db.into('organizations').insert([organization]);
+function seedCommentsTables(db,comments){
+	// use a transaction to group the queries and auto rollback on any failure
+	return db.transaction(async trx=>{
+		await trx.into('comments').insert(comments);
+		// update the auto sequence to match the forced id values
+
+		// need to add id's into the make function before this can be uncommented,
+		// this also means altering code elsewhere.
+
+		// await Promise.all([
+		// 	trx.raw(
+		// 		`SELECT setval('organizations_id_seq', ?)`,
+		// 		[organizations[organizations.length-1].id],
+		// 	)
+		// ]);
+	});
+}
+
+function seedEndorsementsTables(db,endorsements){
+	// use a transaction to group the queries and auto rollback on any failure
+	return db.transaction(async trx=>{
+		await trx.into('endorsements').insert(endorsements);
+		// update the auto sequence to match the forced id values
+		await Promise.all([
+			trx.raw(
+				`SELECT setval('users_id_seq', ?)`,
+				[endorsements[endorsements.length-1].id],
+			)
+		]);
+	});
+}
+
+function seedMaliciousOrg(db,org){
+	return db.into('organizations').insert([org]);
 }
 
 function makeAuthHeader(user){
@@ -395,13 +438,18 @@ module.exports={
 	makeExpectedOrg,
 	makeNewOrg,
 	makeNewEndorsement,
+	makeNewComment,
 	makeMaliciousOrg,
 	makeMaliciousComment,
+	makeMaliciousEndorsement,
 	makeOrgsFixtures,
 	makeEndorsementsFixtures,
+	makeCommentsFixtures,
 	cleanTables,
-	seedOrgsTables,
 	seedUsersTables,
+	seedOrgsTables,
+	seedEndorsementsTables,
+	seedCommentsTables,
 	seedMaliciousOrg,
 	makeAuthHeader
 }
