@@ -82,7 +82,7 @@ export default class OrgProfile extends Component{
 				<EndorsementForm orgId={this.state.org.id} updateEndorsements={this.updateEndorsements}/>
 				<div id="comments-list-title"><h3>See what others are saying</h3></div>
 				<CommentList comments={this.state.comments}/>
-				<CommentForm orgId={this.state.org.id} getComments={this.updateComments}/>
+				<CommentForm orgId={this.state.org.id} updateComments={this.updateComments}/>
 			</section>
 		);
 	}

@@ -17,7 +17,7 @@ export default class CommentForm extends Component{
                         </div>
                         <div className="comment-form-element-container">
                             <label>Message:</label>
-                            <textarea className="comment-form-element" name="content" id="comment-form-message" rows="6" cols="27" required aria-labelledby="review-form-message"/>
+                            <textarea className="comment-form-element" name="comment" id="comment-form-message" rows="6" cols="27" required aria-labelledby="review-form-message"/>
                         </div>
                         <div className="comment-form-error-container"></div>
                         <div className="comment-form-element-container">
@@ -32,11 +32,11 @@ export default class CommentForm extends Component{
     }
     handleSubmit=e=>{
         e.preventDefault()
-        const {title,content}=e.target;
+        const {title,comment}=e.target;
         // Have to add in userId when user login system is implemented.
-        CommentsApiService.postOrgComment(69,this.props.orgId,title.value,content.value)
+        CommentsApiService.postOrgComment(this.props.orgId,title.value,comment.value)
             .then(res=>this.props.updateComments(this.props.orgId))
-            .catch(this.state.setError);
+            .catch(this.state.error);
     }
     render(){
         return(

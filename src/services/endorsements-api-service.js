@@ -1,12 +1,15 @@
-import config from '../config'
+import TokenService from './token-service';
+import config from '../config';
 
 const EndorsementsApiService={
-	postOrgEndorsements(userId,orgId,endorsement){
+	postOrgEndorsements(orgId,endorsement){
 		return fetch(`${config.API_ENDPOINT}/orgs/${orgId}/endorsements`,{
 			method:'POST',
-			headers:{'content-type':'application/json',},
+			headers:{
+				'content-type':'application/json',
+				'authorization':`basic ${TokenService.getAuthToken()}`
+			},
 	  		body:JSON.stringify({
-				user_id:userId,
 				org_id:orgId,
 				endorsement:endorsement,
 			}),
@@ -16,7 +19,7 @@ const EndorsementsApiService={
 				? res.json().then(e=>Promise.reject(e))
 		  		: res.json()
 	  	)
-	},
+	}
 }
 
 export default EndorsementsApiService

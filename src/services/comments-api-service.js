@@ -1,3 +1,4 @@
+import TokenService from './token-service';
 import config from '../config'
 
 const CommentsApiService={
@@ -11,15 +12,17 @@ const CommentsApiService={
 		  		: res.json()
 	  	)
   	},
-	postOrgComment(userId,orgId,title,content){
+	postOrgComment(orgId,title,comment){
 		return fetch(`${config.API_ENDPOINT}/orgs/${orgId}/comments`,{
 			method:'POST',
-			headers:{'content-type':'application/json',},
+			headers:{
+				'content-type':'application/json',
+				'authorization':`basic ${TokenService.getAuthToken()}`
+			},
 	  		body:JSON.stringify({
-				user_id:userId,
 				org_id:orgId,
 				title:title,
-				content:content,
+				comment:comment,
 			}),
 		})
 		.then(res=>
@@ -27,7 +30,7 @@ const CommentsApiService={
 				? res.json().then(e=>Promise.reject(e))
 		  		: res.json()
 	  	)
-	},
+	}
 }
 
 export default CommentsApiService;

@@ -35,9 +35,9 @@ export default class EndorsementForm extends Component{
         // Have to add in userId when user login system is implemented.
         // Need to code a check against the endorsements table to look for existing user_id/org_id endorsement
         // return a notification that the user has already submitted an endorsement if exists
-        EndorsementsApiService.postOrgEndorsements(69,this.props.orgId,endorsement.value)
+        EndorsementsApiService.postOrgEndorsements(/*69,*/this.props.orgId,endorsement.value)
             .then(res=>this.props.updateEndorsements(endorsement.value))
-            .catch(this.state.setError);
+            .catch(this.state.error);
     }
     render(){
         return(
