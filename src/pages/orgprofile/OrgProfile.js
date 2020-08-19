@@ -18,7 +18,6 @@ export default class OrgProfile extends Component{
 			.catch(this.state.setError);
 	}
 	updateEndorsements=endorsement=>{
-		console.log(endorsement)
 		if(parseInt(endorsement)===1)this.setState({
 			org:{
 				id:this.state.org.id,

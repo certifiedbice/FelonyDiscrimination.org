@@ -11,7 +11,6 @@ export default class Search extends Component{
 	};
 
 	storeSearchResults=res=>{
-		console.log(res)
 		if(res.length>0){
 			this.setState({search_results:[...res]})
 		}

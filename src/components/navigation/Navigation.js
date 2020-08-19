@@ -4,7 +4,9 @@ import TokenService from '../../services/token-service';
 import './Navigation.css'
 
 export default class Navigation extends Component{
-	handleLogoutClick=()=>{}
+	handleLogoutClick=()=>{
+		TokenService.clearAuthToken();
+	}
 	
 	renderLoggedInClass(){
 		return 'main-menu-loggedIn'
