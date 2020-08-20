@@ -1,3 +1,5 @@
+const bcrypt=require('bcryptjs');
+
 function makeUsersArray(){
 	return [
 		{
@@ -361,32 +363,29 @@ function seedOrgsTables(db,orgs){
 	// use a transaction to group the queries and auto rollback on any failure
 	return db.transaction(async trx=>{
 		await trx.into('organizations').insert(orgs);
+		// Needs implementation, but won't work due to how I structured the org_id.
+
 		// update the auto sequence to match the forced id values
-
-		// need to add id's into the make function before this can be uncommented,
-		// this also means altering code elsewhere.
-
-		// await Promise.all([
-		// 	trx.raw(
-		// 		`SELECT setval('organizations_id_seq', ?)`,
-		// 		[organizations[organizations.length-1].id],
-		// 	)
-		// ]);
+		// await trx.raw(
+		// 	`SELECT setval('organizations_id_seq', ?)`,
+		// 	[orgs[orgs.length-1].id],
+		// )
 	});
 }
 
 function seedUsersTables(db,users){
-	// use a transaction to group the queries and auto rollback on any failure
-	return db.transaction(async trx=>{
-		await trx.into('users').insert(users);
-		// update the auto sequence to match the forced id values
-		await Promise.all([
-			trx.raw(
+	const preppedUsers=users.map(user=>({
+		...user,
+		password:bcrypt.hashSync(user.password,1)
+	}));
+	return db.into('users').insert(preppedUsers)
+		.then(()=>
+			// update the auto sequence to stay in sync
+			db.raw(
 				`SELECT setval('users_id_seq', ?)`,
 				[users[users.length-1].id],
 			)
-		]);
-	});
+		)
 }
 
 function seedCommentsTables(db,comments){
@@ -394,16 +393,10 @@ function seedCommentsTables(db,comments){
 	return db.transaction(async trx=>{
 		await trx.into('comments').insert(comments);
 		// update the auto sequence to match the forced id values
-
-		// need to add id's into the make function before this can be uncommented,
-		// this also means altering code elsewhere.
-
-		// await Promise.all([
-		// 	trx.raw(
-		// 		`SELECT setval('organizations_id_seq', ?)`,
-		// 		[organizations[organizations.length-1].id],
-		// 	)
-		// ]);
+		await trx.raw(
+			`SELECT setval('comments_id_seq', ?)`,
+			[articles[comments.length-1].id],
+		)
 	});
 }
 
@@ -412,12 +405,10 @@ function seedEndorsementsTables(db,endorsements){
 	return db.transaction(async trx=>{
 		await trx.into('endorsements').insert(endorsements);
 		// update the auto sequence to match the forced id values
-		await Promise.all([
-			trx.raw(
-				`SELECT setval('users_id_seq', ?)`,
+		await trx.raw(
+				`SELECT setval('endorsements_id_seq', ?)`,
 				[endorsements[endorsements.length-1].id],
-			)
-		]);
+		)
 	});
 }
 

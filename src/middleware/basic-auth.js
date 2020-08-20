@@ -1,3 +1,5 @@
+const bcrypt=require('bcryptjs');
+
 function requireAuth(req,res,next){
 	const authToken=req.get('Authorization')||'';
 	let basicToken;
@@ -18,13 +20,19 @@ function requireAuth(req,res,next){
 		.where({email:tokenEmail})
 		.first()
 		.then(user=>{
-			if(!user||user.password!==tokenPassword){
+			if (!user) {
 				return res.status(401).json({error:'Unauthorized request'});
 			}
-			req.user=user;
+			return bcrypt.compare(tokenPassword,user.password)
+			.then(passwordsMatch =>{
+			if (!passwordsMatch){
+				return res.status(401).json({ error:'Unauthorized request' })
+			}
+			req.user = user
 			next()
-		})
-		.catch(next);
+		});
+	})
+	.catch(next);
 }
   
 module.exports={requireAuth};

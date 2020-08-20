@@ -1,0 +1,11 @@
+IPv4 address:	192.168.0.3
+IPv4 DNS servers:	192.168.0.1
+205.171.2.25
+Manufacturer:	Rivet
+Description:	Killer E2600 Gigabit Ethernet Controller
+Driver version:	10.35.510.2019
+Physical address (MAC):	00-D8-61-89-03-FB
+
+
+205.171.3.66
+205.171.202.166

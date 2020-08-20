@@ -26,7 +26,7 @@ describe('Endpoints',function(){
 	  		});
 		});
 		context('Given there are organizations in the database',()=>{
-			beforeEach('insert articles',()=>helpers.seedOrgsTables(db,testOrgs));
+			beforeEach('insert organizations',()=>helpers.seedOrgsTables(db,testOrgs));
 			it('responds with 200 and the specified organization',()=>{
 				const orgId=2;
 				let expectedOrg=helpers.makeExpectedOrg(testOrgs[orgId-1]);
@@ -36,7 +36,7 @@ describe('Endpoints',function(){
 					.expect(200,expectedOrg);
 			});
 		});
-		context(`Given an XSS attack article`,()=>{
+		context(`Given an XSS attack organization`,()=>{
 			const {maliciousOrg,expectedOrg}=helpers.makeMaliciousOrg();
 			beforeEach('insert malicious organization',()=>{
 				return helpers.seedMaliciousOrg(db,maliciousOrg)
@@ -69,7 +69,7 @@ describe('Endpoints',function(){
 	  		});
 		});
 		context(`Given a valid search query param`,()=>{
-			beforeEach('insert articles',()=>helpers.seedOrgsTables(db,testOrgs));
+			beforeEach('insert organizations',()=>helpers.seedOrgsTables(db,testOrgs));
 			it(`responds with 200 and the query results`,()=>{
 				const orgId=2;
 				let expectedOrg=helpers.makeExpectedOrg(testOrgs[orgId-1]);
