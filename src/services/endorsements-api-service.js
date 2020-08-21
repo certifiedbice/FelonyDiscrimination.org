@@ -7,7 +7,7 @@ const EndorsementsApiService={
 			method:'POST',
 			headers:{
 				'content-type':'application/json',
-				'authorization':`basic ${TokenService.getAuthToken()}`
+				'authorization':`bearer ${TokenService.getAuthToken()}`
 			},
 	  		body:JSON.stringify({
 				org_id:orgId,

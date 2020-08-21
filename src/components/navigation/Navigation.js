@@ -38,7 +38,7 @@ export default class Navigation extends Component{
 					<NavLink className='main-menu-link' activeClassName='is-active' exact to='/resources'></NavLink>
 					<span className='tooltiptext'>Resources</span>
 				</div>
-				<div className='main-menu-button' id='main-menu-share'  aria-label='Main menu share'>
+				<div className='main-menu-button' id='main-menu-share' aria-label='Main menu share'>
 					<NavLink className='main-menu-link' activeClassName='is-active' exact to='/share'></NavLink>
 					<span className='tooltiptext'>Share</span>
 				</div>

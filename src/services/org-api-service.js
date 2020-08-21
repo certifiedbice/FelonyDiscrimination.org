@@ -1,3 +1,4 @@
+import TokenService from './token-service';
 import config from '../config'
 
 const OrgApiService={
@@ -14,7 +15,10 @@ const OrgApiService={
 	postOrg(org_name,org_phone,org_st_addr,org_city,org_state,org_zipcode,org_type){
 		return fetch(`${config.API_ENDPOINT}/orgs/submit-org`,{
 			method:'POST',
-			headers:{'content-type':'application/json',},
+			headers:{
+				'content-type':'application/json',
+				'authorization':`bearer ${TokenService.getAuthToken()}`
+			},
 	  		body:JSON.stringify({
 				org_name:org_name,
 				org_phone:org_phone,

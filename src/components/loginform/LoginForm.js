@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
 import Context from '../../context/Context';
 
 export default class LoginForm extends Component{
@@ -9,20 +10,35 @@ export default class LoginForm extends Component{
 
 	onLoginSuccess=()=>{}
 
-	handleSubmitBasicAuth=e=>{
+	// handleSubmitBasicAuth=e=>{
+	// 	e.preventDefault();
+	// 	const {email,password}=e.target;
+	// 	TokenService.saveAuthToken(TokenService.makeBasicAuthToken(email.value,password.value));
+	// 	email.value='';
+	// 	password.value='';
+	// 	this.onLoginSuccess();
+	// 	this.context.loginState(true);
+	// }
+
+	handleSubmitJwtAuth=e=>{
 		e.preventDefault();
+		this.setState({error:null});
 		const {email,password}=e.target;
-		TokenService.saveAuthToken(TokenService.makeBasicAuthToken(email.value,password.value));
-		email.value='';
-		password.value='';
-		this.onLoginSuccess();
-		this.context.loginState(true);
+
+		AuthApiService.postLogin({email:email.value,password:password.value})
+		.then(res=>{
+			email.value='';
+			password.value='';
+			TokenService.saveAuthToken(res.authToken);
+			this.onLoginSuccess();
+		})
+		.catch(res=>{this.setState({error:res.error})});
 	}
 
 	render(){
 		const {error}=this.state;
         return(
-            <form id='login-form' name='login-form' aria-label='Login form' onSubmit={this.handleSubmitBasicAuth}>
+            <form id='login-form' name='login-form' aria-label='Login form' onSubmit={this.handleSubmitJwtAuth}>
 	            <fieldset>
 					<legend><h2>Login</h2></legend>
 					<div className='form-element-container'>
