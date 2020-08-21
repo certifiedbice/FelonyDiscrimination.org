@@ -1,7 +1,7 @@
 const path=require('path');
 const express=require('express');
 const CommentsService=require('./comments-service');
-const {requireAuth}=require('../middleware/basic-auth');
+const {requireAuth}=require('../middleware/jwt-auth');
 const commentsRouter=express.Router();
 const jsonBodyParser=express.json();
 
@@ -38,7 +38,8 @@ commentsRouter
 				error:{message:`Missing '${key}' in request body`}
 			})
 		}
-		newComment.user_id=req.user.id;
+		// newComment.user_id=req.user.id;
+		req.user=newComment.user_id=req.user.id;
 		CommentsService.insertComment(
 			req.app.get('db'),
 			newComment

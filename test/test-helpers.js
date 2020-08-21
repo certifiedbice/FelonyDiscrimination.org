@@ -1,4 +1,5 @@
 const bcrypt=require('bcryptjs');
+const jwt=require('jsonwebtoken');
 
 function makeUsersArray(){
 	return [
@@ -416,9 +417,10 @@ function seedMaliciousOrg(db,org){
 	return db.into('organizations').insert([org]);
 }
 
-function makeAuthHeader(user){
-	const token=Buffer.from(`${user.email}:${user.password}`).toString('base64');
-	return `Basic ${token}`;
+function makeAuthHeader(user,secret=process.env.JWT_SECRET){
+	// const token=Buffer.from(`${user.email}:${user.password}`).toString('base64');
+	const token=jwt.sign({user_id:user.id},secret,{subject:user.email,algorithm:'HS256'});
+	return `Bearer ${token}`;
 }
 
 module.exports={

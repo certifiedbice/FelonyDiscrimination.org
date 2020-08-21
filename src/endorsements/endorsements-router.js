@@ -1,7 +1,7 @@
 const path=require('path');
 const express=require('express');
 const EndorsementsService=require('./endorsements-service');
-const {requireAuth}=require('../middleware/basic-auth');
+const {requireAuth}=require('../middleware/jwt-auth');
 const endorsementsRouter=express.Router();
 const jsonBodyParser=express.json();
 

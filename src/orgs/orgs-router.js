@@ -2,7 +2,7 @@ const path=require('path');
 const express=require('express');
 const xss=require('xss');
 const OrgsService=require('./orgs-service');
-const {requireAuth}=require('../middleware/basic-auth');
+const {requireAuth}=require('../middleware/jwt-auth');
 const orgsRouter=express.Router();
 const jsonParser=express.json();
 
