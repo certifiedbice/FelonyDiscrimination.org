@@ -5,20 +5,11 @@ import Context from '../../context/Context';
 
 export default class LoginForm extends Component{
     static contextType=Context;
-    //static defaultProps={onLoginSuccess:()=>{}};
-	state={error:null};
+    state={error:null};
 
-	onLoginSuccess=()=>{}
-
-	// handleSubmitBasicAuth=e=>{
-	// 	e.preventDefault();
-	// 	const {email,password}=e.target;
-	// 	TokenService.saveAuthToken(TokenService.makeBasicAuthToken(email.value,password.value));
-	// 	email.value='';
-	// 	password.value='';
-	// 	this.onLoginSuccess();
-	// 	this.context.loginState(true);
-	// }
+	onLoginSuccess=()=>{
+		this.context.loginState(true);
+	}
 
 	handleSubmitJwtAuth=e=>{
 		e.preventDefault();
