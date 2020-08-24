@@ -4,7 +4,7 @@ const morgan=require('morgan');
 const cors=require('cors');
 const helmet=require('helmet');
 const {NODE_ENV}=require('./config');
-//const usersRouter = require('./users/users-router')
+const usersRouter=require('./users/users-router');
 const contactRouter=require('./contact/contact-router');
 const orgsRouter=require('./orgs/orgs-router');
 const endorsementsRouter=require('./endorsements/endorsements-router');
@@ -16,7 +16,7 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 app.use('/api/auth',authRouter);
-//app.use('/api/users', usersRouter)
+app.use('/api/users',usersRouter);
 app.use('/api/contact',contactRouter);
 app.use('/api/orgs',orgsRouter);
 app.use('/api/orgs/:orgId/endorsements',endorsementsRouter)
