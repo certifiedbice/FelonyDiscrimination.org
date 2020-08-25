@@ -21,35 +21,40 @@ describe('Organizations Endpoints',function(){
 		const protectedEndpoints=[
 			{
 				name:'POST /api/orgs/submit-org',
-				path:'/api/orgs/submit-org'
+				path:'/api/orgs/submit-org',
+      			method:supertest(app).post
 			},
 			{
 				name:'POST /api/orgs/:orgId/endorsements',
-				path:'/api/orgs/:orgId/endorsements'
+				path:'/api/orgs/:orgId/endorsements',
+      			method:supertest(app).post
 			},
 			{
 				name:'POST /api/orgs/:orgId/comments',
-				path:'/api/orgs/:orgId/comments'
-			}
+				path:'/api/orgs/:orgId/comments',
+      			method:supertest(app).post
+			},
+			{
+      			name:'POST /api/auth/refresh',
+      			path:'/api/auth/refresh',
+      			method:supertest(app).post
+    		}
 		];
 		protectedEndpoints.forEach(endpoint=>{
 			describe(endpoint.name,()=>{
 				it('should return 401 \'Missing bearer token\' when missing bearer token',()=>{
-					return supertest(app)
-						.post(endpoint.path)
+					return endpoint.method(endpoint.path)
 						.expect(401,{error:'Missing bearer token'});
 				});
 				it(`responds 401 'Unauthorized request' when invalid JWT secret`,()=>{
 					const userNoCreds={email:'',password:''};
-					return supertest(app)
-						.post(endpoint.path)
+					return endpoint.method(endpoint.path)
 						.set('Authorization',helpers.makeAuthHeader(userNoCreds))
 						.expect(401,{error:'Unauthorized request'});
 				});
 				it('should return 401 \'Unauthorized request\' when invalid sub in payload',()=>{
 					const invalidUser={email:'badUser',password:''};
-					return supertest(app)
-						.post(endpoint.path)
+					return endpoint.method(endpoint.path)
 						.set('Authorization',helpers.makeAuthHeader(invalidUser))
 						.expect(401,{error:'Unauthorized request'});
 				});

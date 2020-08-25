@@ -49,7 +49,11 @@ describe('Auth Endpoints',function(){
 				const userValidCreds={email:testUser.email,password:testUser.password};
 				const expectedToken=jwt.sign(
 					{user_id:testUser.id},process.env.JWT_SECRET,
-				  	{subject:testUser.email,algorithm:'HS256'}
+				  	{
+					  subject:testUser.email,
+					  expiresIn:process.env.JWT_EXPIRY,
+					  algorithm:'HS256'
+					}
 				);
 				return supertest(app)
 				.post('/api/auth/login')
