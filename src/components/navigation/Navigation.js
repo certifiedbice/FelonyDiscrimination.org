@@ -1,17 +1,26 @@
 import React,{Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import TokenService from '../../services/token-service';
+import IdleService from '../../services/idle-service';
 import './Navigation.css'
 
 export default class Navigation extends Component{
 	handleLogoutClick=()=>{
 		TokenService.clearAuthToken();
+	    /* when logging out, clear the callbacks to the refresh api and idle auto logout */
+	    TokenService.clearCallbackBeforeExpiry();
+	    IdleService.unRegisterIdleResets();
 	}
-	
+	// renderLogoutLink(){
+	// 	return(
+	// 		<div className='Header__logged-in'>
+	// 			<Link onClick={this.handleLogoutClick} to='/'>Logout</Link>
+	// 		</div>
+	// 	);
+	// }
 	renderLoggedInClass(){
 		return 'main-menu-loggedIn'
 	}
-
 	renderLoginClass(){
 		return 'main-menu-login'
 	}
