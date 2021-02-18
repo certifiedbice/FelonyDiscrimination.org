@@ -1,32 +1,36 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Dependencies
+/**/node_modules
+/**/.pnp
+/**/.pnp.js
 
-# testing
-/coverage
+# Testing
+/**/coverage
 
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-admin.txt
+# Production
+/**/build
 
 # Environment Variables
-.env
+/**/.env
+/**/.env.local
+/**/.env.development.local
+/**/.env.test.local
+/**/.env.production.local
+
+# Misc
+/**/.DS_Store
+/admin.txt
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
+/**/npm-debug.log*
+/**/yarn-debug.log*
+/**/yarn-error.log*
+/**/*.log
 
 # VSCode
 /.vscode
+/*.code-workspace
+
+# Vercel
+/**/.vercel
