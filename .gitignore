@@ -21,6 +21,7 @@
 # Misc
 /**/.DS_Store
 /**/admin.txt
+/ui-build-files
 
 # Logs
 /**/npm-debug.log*
